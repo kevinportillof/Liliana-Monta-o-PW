@@ -13,37 +13,38 @@
 
 <style>
     body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-    background-image: url('https://i.ibb.co/Pzr02N65/Pink-Aesthetic-Watercolor-Background-Phone-Wallpaper.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    text-align: center;
-    color: white;
-    overflow-x: hidden;
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        background-image: url('https://i.ibb.co/Pzr02N65/Pink-Aesthetic-Watercolor-Background-Phone-Wallpaper.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+        color: white;
+        overflow-x: hidden;
+    }
+
+ /* BRILLOS DORADOS SOBRE TODO EL SITIO */
+.spark {
+    position: fixed; /* fijo sobre todo el body */
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 9999; /* siempre encima */
+    animation-name: shineFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-    /* BRILLOS DORADOS */
-    .spark {
-        position: fixed;
-        top: -10px;
-        z-index: 9999;
-        user-select: none;
-        pointer-events: none;
-        color: gold;
-        font-size: 1em;
-        opacity: 0.7;
-        animation-name: shineFall;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes shineFall {
-        0% { transform: translateY(0) rotate(0deg); }
-        100% { transform: translateY(100vh) rotate(360deg); }
-    }
+@keyframes shineFall {
+    0% { transform: translateY(-10px) scale(0.5); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100vh) scale(1); opacity: 0; }
+}
 
     .overlay {
         background: rgba(0,0,0,0.55);
@@ -68,13 +69,13 @@
         to   { opacity: 1; transform: translateY(0); }
     }
 
-  img.logo {
-    width: 80%;
-    max-width: 350px;
-    border-radius: 20px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-}
+    img.logo {
+        width: 80%;
+        max-width: 350px;
+        border-radius: 20px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+    }
 
     img.logo:hover {
         transform: rotate(-3deg) scale(1.05);
@@ -167,13 +168,11 @@
     .social-circle:hover { transform: scale(1.15); }
 
     .tikTok { background: #000; }
-        .facebook { background: #1877f2; }
-        .instagram { 
-            background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-        }
-        .maps {
-    background: #34a853; /* verde Google Maps */
-}
+    .facebook { background: #1877f2; }
+    .instagram { 
+        background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
+    .maps { background: #34a853; }
 
     .direccion {
         color: white;
@@ -208,16 +207,10 @@
 <div class="overlay"></div>
 
 <div class="contenido" id="inicio">
-
-    <!-- LOGOTIPO -->
-    <img 
-      src="https://i.ibb.co/3yvrQBKx/Logotipo-arquitectura-geome-trico-moderno-minimalista-blanco-negro.png"
-      class="logo"
-      alt="Logotipo Estética Gold Glam"
-      onclick="regresar()"
-    >
-
-    <!-- NOMBRE -->
+    <img src="https://i.ibb.co/3yvrQBKx/Logotipo-arquitectura-geome-trico-moderno-minimalista-blanco-negro.png"
+         class="logo"
+         alt="Logotipo Estética Gold Glam"
+         onclick="regresar()">
     <h1>Belleza y Estilo</h1>
 
     <a class="btn" onclick="mostrar('servicios')"><i class="fa-solid fa-scissors"></i> Servicios</a>
@@ -225,24 +218,20 @@
     <a class="btn" onclick="mostrar('galeria')"><i class="fa-solid fa-images"></i> Galería</a>
     <a class="btn" href="https://wa.me/+523112553233" target="_blank"><i class="fa-brands fa-whatsapp"></i> Agendar Cita</a>
 
-      <div class="social-container">
+    <div class="social-container">
         <a class="social-circle tikTok" href="https://vm.tiktok.com/ZSHKkXs37drKQ-NFZH4/" target="_blank">
             <i class="fa-brands fa-tiktok"></i>
         </a>
-
         <a class="social-circle facebook" href="https://www.facebook.com/share/1C1kpjL7ko/" target="_blank">
             <i class="fa-brands fa-facebook-f"></i>
         </a>
-
-        <a class="social-circle instagram" href="https://www.instagram.com/lilianamontano_prettywoman?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+        <a class="social-circle instagram" href="https://www.instagram.com/lilianamontano_prettywoman" target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
-
-        <a class="social-circle maps" 
-       href="https://maps.app.goo.gl/PHLkM8y2vWVXFSnJ7?g_st=aw" 
-       target="_blank">
-        <i class="fa-solid fa-location-dot"></i>
-    </a>
+        <a class="social-circle maps" href="https://maps.app.goo.gl/PHLkM8y2vWVXFSnJ7?g_st=aw" target="_blank">
+            <i class="fa-solid fa-location-dot"></i>
+        </a>
+    </div>
 </div>
 
 <!-- SECCIONES -->
@@ -277,37 +266,35 @@
 
 <div class="seccion" id="galeria">
     <h2 class="titulo">Galería</h2>
-
     <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
-        <img src="https://i.ibb.co/qyW8F6G/estilista1.jpg"
-             style="width:85%; max-width:420px; border-radius:20px;">
-
-        <img src="https://i.ibb.co/jkyT0Qx/estilista2.jpg"
-             style="width:85%; max-width:420px; border-radius:20px;">
+        <img src="https://i.ibb.co/qyW8F6G/estilista1.jpg" style="width:85%; max-width:420px; border-radius:20px;">
+        <img src="https://i.ibb.co/jkyT0Qx/estilista2.jpg" style="width:85%; max-width:420px; border-radius:20px;">
     </div>
-
-    <a class="btn-regresar" onclick="regresar()">
-        <i class="fa-solid fa-arrow-left"></i> Regresar
-    </a>
+    <a class="btn-regresar" onclick="regresar()"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
 </div>
 
 <script>
-// BRILLOS DORADOS
+
+// CREAR BRILLOS
+
 function crearBrillos() {
     const count = 50;
     for (let i = 0; i < count; i++) {
-        let spark = document.createElement('div');
+        const spark = document.createElement('div');
         spark.className = 'spark';
         spark.style.left = Math.random() * window.innerWidth + 'px';
-        spark.style.fontSize = (Math.random() * 10 + 12) + 'px';
+        spark.style.top = -(Math.random() * 100) + 'px';
+        const size = Math.random() * 6 + 4;
+        spark.style.width = spark.style.height = size + 'px';
         spark.style.animationDuration = (Math.random() * 5 + 5) + 's';
-        spark.innerText = '✨';
+        spark.style.animationDelay = (Math.random() * 5) + 's';
         document.body.appendChild(spark);
     }
 }
 crearBrillos();
 
 // NAVEGACIÓN
+
 function mostrar(id) {
     document.getElementById("inicio").style.display = "none";
     document.querySelectorAll(".seccion").forEach(sec => sec.style.display = "none");
