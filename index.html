@@ -420,10 +420,151 @@ body{
     font-weight: 600;
 }
 
+.subtitulo-productos{
+    max-width: 420px;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ORDEN PROFESIONAL DE PRODUCTOS */
+.producto-marca{
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffd700;
+    margin-bottom: 4px;
+}
+
+.producto-nombre{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.producto-precio{
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 6px;
+}
+
+.producto-desc{
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+.productos-lista{
+    max-width: 380px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.producto-item{
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.producto-item img{
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    background: #000;
+}
+
+.producto-info{
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.producto-info span{
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.producto-info small{
+    display: block;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.nota-productos{
+    max-width: 420px;
+    margin: 10px auto 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+.servicios {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.servicios h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.nota {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.servicio {
+  background: rgba(0,0,0,0.05);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.servicio img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+
+.servicio h3 {
+  margin-top: 15px;
+}
+
+.servicio p {
+  color: #eee;
+}
+
+.garantia {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+
 
 </style>
 </head>
 <body>
+
+    <div class="zoom-overlay" id="zoomOverlay" onclick="cerrarZoom()">
+    <span>&times;</span>
+    <img id="zoomImg">
+</div>
 
 <a href="https://wa.me/523112553233" 
    class="whatsapp-float" 
@@ -475,72 +616,457 @@ body{
 </div>
 
 <!-- SECCIONES -->
-<div class="seccion" id="servicios">
-  <h2 class="titulo">Servicios</h2>
+<section class="seccion servicios" id="servicios">
+  <h2 class="titulo">Nuestros Servicios</h2>
 
-<p class="subtitulo-servicios">
-Los precios son <b>aproximados</b> y corresponden al <b>costo mínimo</b>.
-El precio final puede variar según el largo, volumen del cabello y la cantidad
-de producto profesional que se utilice.
+  <p class="subtitulo-servicios">
+    Servicios profesionales de color y tratamientos capilares diseñados para realzar tu belleza natural,
+    cuidando la salud y calidad de tu cabello.
+  </p>
+
+  <!-- COLORACIÓN -->
+  <div class="servicio-item">
+    ✨ <strong>Babylights</strong>
+    <small>
+      Reflejos ultra finos y delicados que aportan luminosidad natural al cabello.
+      Ideales para un look suave, juvenil y de bajo mantenimiento.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    ✨ <strong>Balayage</strong>
+    <small>
+      Técnica francesa aplicada a mano alzada que crea un degradado natural y elegante,
+      con raíces más oscuras y puntas iluminadas.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    ✨ <strong>Highlights</strong>
+    <small>
+      Iluminación estratégica que aporta contraste, profundidad y brillo,
+      imitando los reflejos naturales del sol.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    ✨ <strong>Diseño Blonder (Rubios personalizados)</strong>
+    <small>
+      Creación de rubios sofisticados y multidimensionales combinando tonos cálidos y fríos,
+      adaptados a tu estilo y facciones para un acabado natural y lujoso.
+    </small>
+  </div>
+
+  <!-- TRATAMIENTOS -->
+  <h3 class="subtitulo" style="margin-top:30px;">Tratamientos Capilares</h3>
+
+  <div class="servicio-item">
+    💖 <strong>Botox Reestructurante</strong>
+    <span>Alisa hasta un 80%</span>
+    <small>
+      Restaura la fibra capilar, elimina el frizz y aporta brillo, suavidad y nutrición profunda.
+      Ideal para cabellos procesados. Duración aproximada de 4 meses.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    💖 <strong>Botox Hidratante</strong>
+    <span>Alisa hasta un 20%</span>
+    <small>
+      Aporta hidratación, brillo y suavidad, controlando el frizz.
+      Ideal para cabellos secos y deshidratados.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    💖 <strong>Tratamiento de Encerado</strong>
+    <span>No alisa</span>
+    <small>
+      Nutre profundamente, elimina el frizz y aporta brillo y suavidad.
+      Apto para cabellos procesados.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    💖 <strong>Encerado Extra Fuerte</strong>
+    <span>Alisa hasta un 60%</span>
+    <small>
+      Tratamiento reestructurante que reduce la porosidad,
+      aporta brillo intenso y elimina el frizz.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    💖 <strong>Tratamiento Truss</strong>
+    <small>
+      Restaura profundamente el cabello, regula el pH,
+      combate la porosidad y devuelve elasticidad y suavidad.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    💖 <strong>Tratamiento Olaplex</strong>
+    <small>
+      Fortalece el cabello desde el interior, aporta brillo,
+      hidratación y protección contra futuros daños.
+    </small>
+  </div>
+
+  <!-- OTROS -->
+  <h3 class="subtitulo" style="margin-top:30px;">Corte y Detalles de Belleza</h3>
+
+  <div class="servicio-item">
+    ✂️ <strong>Corte de cabello</strong>
+    <span>Desde $350 MXN</span>
+    <small>
+      Incluye lavado y estilizado.
+      El precio puede variar según largo y volumen.
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    ✨ <strong>Depilación facial</strong>
+    <small>
+      Cejas $150 · Bozo $85 · Rostro completo $250
+    </small>
+  </div>
+
+  <div class="servicio-item">
+    ✨ <strong>Lifting de pestañas</strong>
+    <span>$250 MXN</span>
+    <small>
+      Eleva y curva las pestañas naturales desde la raíz,
+      logrando una mirada más definida y femenina sin extensiones.
+    </small>
+  </div>
+
+  <p class="garantia">💖 Todos nuestros servicios cuentan con garantía 💖</p>
+
+  <a class="btn-regresar" onclick="regresar()">⬅️ Regresar</a>
+</section>
+
+
+<div class="seccion" id="productos">
+  <h2 class="titulo">Productos</h2>
+
+<p class="subtitulo-productos">
+Trabajamos con productos profesionales y originales, seleccionados para
+cuidar y mantener la salud de tu cabello desde casa.
+La disponibilidad puede variar.
 </p>
 
-<div class="servicios-lista">
-    <div class="servicio-item">
-        ✂️ Corte
-        <span>Desde $350 MXN</span>
-        <small>(Depende del largo)</small>
+<div class="productos-lista">
+
+<div class="producto-item">
+  <img src="https://i.ibb.co/W4gN90kK/1.png"
+       alt="Davines LOVE Curl Conditioner"
+       onclick="zoomImagen(this.src)"
+       style="cursor: zoom-in;">
+
+  <div class="producto-info">
+    <strong class="producto-marca">DAVINES</strong>
+
+    <div class="producto-nombre">
+      LOVE Curl Conditioner · Acondicionador para rizos
     </div>
 
-    <div class="servicio-item">
-        💆‍♀️ Botox hidratante
-        <span>Desde $1,450 MXN</span>
-    </div>
+    <span class="producto-precio">$750 MXN</span>
 
-    <div class="servicio-item">
-        ✨ Alaciado reestructurante
-        <span>Desde $1,850 MXN</span>
+    <small class="producto-desc">
+      Acondicionador profesional para cabello ondulado o rizado.
+      Define los rizos, controla el frizz y aporta suavidad y elasticidad
+      sin apelmazar, dejando el cabello más manejable y con movimiento natural.
+      <br><br>
+      📦 Presentación: 250 ml · Uso profesional y en casa.
+    </small>
+  </div>
+</div>
+
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/S4Y75NQL/nou-nou.jpg" 
+         alt="Davines NOUNOU Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+
+        <div class="producto-nombre">
+            NOUNOU Conditioner · Acondicionador nutritivo
+        </div>
+
+        <span class="producto-precio">$895 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador nutritivo ideal para cabello seco o tratado químicamente.
+            Aporta suavidad, brillo y elasticidad, ayudando a restaurar la fibra capilar
+            y dejando el cabello manejable y saludable.
+        </small>
     </div>
 </div>
 
-<div class="nota-servicios">
-🎨 <b>Decoloración</b><br>
-El precio es un aproximado y depende del largo, volumen y las onzas que se utilicen.
-Trabajamos con tecnología <b>Olaplex</b> y marcas profesionales como
-<b>Redken y Davines</b>.  
-Este aproximado se comparte para que tengas una noción 💖  
-Puedes pasar al salón y con gusto se te cotiza en persona ✨
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
 </div>
 
-<p class="garantia">
-💖 Todos nuestros servicios cuentan con garantía 💖
-</p>
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+<div class="producto-item">
+    <img src="https://i.ibb.co/whnNPDZS/White-Simple-Barbershop-Exclusive-Member-Flyer.jpg" alt="Davines OI Conditioner">
+
+    <div class="producto-info">
+        <strong class="producto-marca">DAVINES</strong>
+        <div class="producto-nombre">OI Conditioner · Acondicionador hidratante</div>
+
+        <span class="producto-precio">$1,000 MXN</span>
+
+        <small class="producto-desc">
+            Acondicionador en crema con fragancia sensorial que hidrata,
+            aporta brillo y suavidad, facilitando el secado y dejando el
+            cabello ligero y saludable.
+        </small>
+    </div>
+</div>
+
+
+    <div class="producto-item">
+        <img src="https://i.ibb.co/S4Y75NQL/nou-nou.jpg" alt="Esmaltes profesionales">
+        <div class="producto-info">
+            💅 Esmaltes profesionales
+            <span>$120 MXN</span>
+            <small>Larga duración y acabado profesional</small>
+        </div>
+    </div>
+
+</div>
+
+<div class="nota-productos">
+Si buscas un producto específico o deseas una recomendación personalizada,
+con gusto te asesoramos 💖
+</div>
 
 <a class="btn" href="https://wa.me/523112553233" target="_blank">
-💬 Cotiza tu servicio por WhatsApp
+💬 Consultar productos por WhatsApp
 </a>
 
 <a class="btn-regresar" onclick="regresar()">
 ⬅️ Regresar
 </a>
-</div> 
-
-<div class="seccion" id="productos">
-    <h2 class="titulo">Productos</h2>
-    <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
-        <div style="width:90%; max-width:420px; background:rgba(0,0,0,0.6); padding:20px; border-radius:22px;">
-            <img src="https://i.ibb.co/FV0jWGb/serum.jpg" style="width:100%; border-radius:18px;">
-            <div style="font-size:28px; font-weight:900;">Serum Facial</div>
-            <div style="font-size:24px; font-weight:800; color:#ffd700;">$350 MXN</div>
-            <p>Serum profesional para piel radiante.</p>
-        </div>
-        <div style="width:90%; max-width:420px; background:rgba(0,0,0,0.6); padding:20px; border-radius:22px;">
-            <img src="https://i.ibb.co/9t9NQrJ/esmaltes.jpg" style="width:100%; border-radius:18px;">
-            <div style="font-size:28px; font-weight:900;">Esmaltes Premium</div>
-            <div style="font-size:24px; font-weight:800; color:#ffd700;">$120 MXN</div>
-            <p>Variedad de colores con acabado profesional.</p>
-        </div>
-    </div>
-    <a class="btn-regresar" onclick="regresar()"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
 </div>
 
 <div class="seccion" id="galeria">
@@ -603,6 +1129,17 @@ function abrirMapa() {
             "_blank"
         );
     }
+}
+ 
+function zoomImagen(src) {
+    const overlay = document.getElementById("zoomOverlay");
+    const img = document.getElementById("zoomImg");
+    img.src = src;
+    overlay.style.display = "flex";
+}
+
+function cerrarZoom() {
+    document.getElementById("zoomOverlay").style.display = "none";
 }
 
 </script>
