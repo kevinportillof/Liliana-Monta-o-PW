@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
 <title>Liliana Montano Pretty Woman</title>
 
 <!-- ICONOS -->
@@ -555,7 +557,30 @@ body{
   margin-top: 30px;
 }
 
+.zoom-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
 
+.zoom-overlay img{
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 20px;
+}
+
+.zoom-overlay span{
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
 
 </style>
 </head>
@@ -1622,13 +1647,73 @@ con gusto te asesoramos 💖
 </div>
 
 <div class="seccion" id="galeria">
-    <h2 class="titulo">Galería</h2>
-    <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
-        <img src="https://i.ibb.co/qyW8F6G/estilista1.jpg" style="width:85%; max-width:420px; border-radius:20px;">
-        <img src="https://i.ibb.co/jkyT0Qx/estilista2.jpg" style="width:85%; max-width:420px; border-radius:20px;">
-    </div>
-    <a class="btn-regresar" onclick="regresar()"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
+  <h2 class="titulo">Antes y Después</h2>
+
+  <p class="subtitulo-servicios">
+    Resultados reales realizados en nuestra estética.
+    Cada imagen muestra transformaciones auténticas con técnicas profesionales.
+  </p>
+
+  <div style="display:flex; flex-direction:column; gap:26px; align-items:center;">
+
+    <!-- ITEM -->
+ <div style="max-width:420px;">
+  <img src="https://i.ibb.co/KjZsQ2nn/1.png"
+       alt="Balayage natural antes y después"
+       style="width:100%; border-radius:20px; cursor: zoom-in;"
+       onclick="zoomImagen(this.src)">
+  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+    Balayage natural · Antes y Después
+  </p>
 </div>
+
+<div style="max-width:420px;">
+  <img src="https://i.ibb.co/21jDxmn6/2.png"
+       alt="Balayage en tonos fríos antes y después"
+       style="width:100%; border-radius:20px; cursor: zoom-in;"
+       onclick="zoomImagen(this.src)">
+  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+    Balayage en tonos fríos · Antes y Después
+  </p>
+</div>
+
+<div style="max-width:420px;">
+  <img src="https://i.ibb.co/JwK9dV6F/3.png"
+       alt="Babylights antes y después"
+       style="width:100%; border-radius:20px; cursor: zoom-in;"
+       onclick="zoomImagen(this.src)">
+  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+    Babylights · Antes y Después
+  </p>
+</div>
+
+<div style="max-width:420px;">
+  <img src="https://i.ibb.co/h6nJkgH/4.png"
+       alt="Corrección de color antes y después"
+       style="width:100%; border-radius:20px; cursor: zoom-in;"
+       onclick="zoomImagen(this.src)">
+  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+    Corrección de color · Antes y Después
+  </p>
+</div>
+
+<div style="max-width:420px;">
+  <img src="https://i.ibb.co/rRY4xPvB/5.png"
+       alt="Iluminación personalizada antes y después"
+       style="width:100%; border-radius:20px; cursor: zoom-in;"
+       onclick="zoomImagen(this.src)">
+  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+    Iluminación personalizada · Antes y Después
+  </p>
+</div>
+
+  </div>
+
+  <a class="btn-regresar" onclick="regresar()">
+    <i class="fa-solid fa-arrow-left"></i> Regresar
+  </a>
+</div>
+
 
 <script>
 
