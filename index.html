@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
+<meta name="description" content="Estética en Tepic, Nayarit especializada en coloración, tratamientos capilares y productos profesionales para el cuidado del cabello.">
 
-<title>Liliana Montano Pretty Woman</title>
+<title>Estética Liliana Montaño | Belleza y Estilo en Tepic</title>
 
 <!-- ICONOS -->
  <link rel="stylesheet"
@@ -45,11 +46,11 @@ body{
     position: fixed; /* fijo sobre todo el body */
     width: 6px;
     height: 6px;
-    background: gold;
+    background: #E91E63;
     border-radius: 50%;
     opacity: 0.8;
     pointer-events: none;
-    z-index: 9999; /* siempre encima */
+    z-index: 800; /* siempre encima */
     animation-name: shineFall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -109,58 +110,43 @@ body{
     }
 
     /* BOTONES */
-    .btn {
-        display: block;
-        width: 80%;
-        max-width: 300px;
-        margin: 14px auto;
-        padding: 15px;
-        background: rgba(255, 215, 0, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 215, 0, 0.4);
-        color: white;
-        font-size: 18px;
-        font-weight: 700;
-        border-radius: 16px;
-        text-decoration: none;
-        transition: 0.25s;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+    .btn{
+    display: block;
+    width: 85%;
+    max-width: 320px;
+    margin: 14px auto;
+    padding: 16px;
+    background: linear-gradient(
+        135deg,
+        #2f2f2f,
+        #1c1c1c
+    );
+    color: #f5f5f5;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.18);
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    .btn:hover {
-        background: rgba(255, 215, 0, 0.3);
-        transform: scale(1.05);
-    }
+.btn:hover{
+    transform: scale(1.04);
+}
 
-    .btn-regresar {
-        width: 60%;
-        max-width: 180px;
-        margin: 25px auto;
-        padding: 12px 14px;
-        background: linear-gradient(135deg, #d4af37, #ffd700, #f5c400);
-        background-size: 300% 300%;
-        color: white;
+.btn:active{
+    transform: scale(0.96);
+}
+
+@media (max-width: 768px){
+    .btn{
         font-size: 16px;
-        font-weight: 800;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        border-radius: 50px;
-        border: none;
-        animation: glow 4s ease infinite;
-        box-shadow: 0 0 15px rgba(255,215,0,0.6);
-        transition: all 0.25s ease;
+        padding: 18px;
+        border-radius: 24px;
     }
-
-    @keyframes glow {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    .btn-regresar i { font-size: 18px; }
-    .btn-regresar:hover { transform: scale(1.12); filter: brightness(1.2); }
+}
 
    .social-container {
     margin-top: 30px;
@@ -193,32 +179,15 @@ body{
     }
     .maps { background: #34a853; }
 
-    .direccion {
-        color: white;
-        font-weight: 600;
-        font-size: 16px;
-        text-shadow: 0 0 8px black;
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-    }
+    .titulo{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(242,193,209,0.45); /* rosa suave */
+}
 
-    .seccion {
-        display: none;
-        position: relative;
-        z-index: 2;
-        padding: 40px 20px;
-        animation: fadeIn 0.8s ease;
-    }
-
-    .titulo {
-        font-size: 36px;
-        font-weight: 800;
-        margin-bottom: 25px;
-        text-shadow: 0 0 14px #ffd700;
-    }
     
 /* ===== AJUSTES SOLO PARA CELULAR ===== */
 @media (max-width: 768px) {
@@ -254,22 +223,9 @@ body{
         transform: none;
     }
 
-    .btn-regresar{
-        width: 85%;
-        font-size: 15px;
-        padding: 12px;
-    }
-
     .titulo{
         font-size: 28px;
         margin-bottom: 18px;
-    }
-
-    .direccion{
-        font-size: 14px;
-        flex-wrap: wrap;
-        padding: 0 16px;
-        text-align: center;
     }
 
     .social-container{
@@ -305,7 +261,7 @@ body{
     align-items: center;
     font-size: 28px;
     box-shadow: 0 0 18px rgba(37,211,102,0.7);
-    z-index: 9999;
+    z-index: 900;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -314,39 +270,9 @@ body{
     box-shadow: 0 0 25px rgba(37,211,102,1);
 }
 
-/* SOLO EN CELULAR */
 @media (max-width: 768px) {
     .whatsapp-float {
         display: flex;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .contenido{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contenido a[href*="wa.me"]{
-        order: -1;
-        margin-bottom: 18px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .btn:active,
-    .btn-regresar:active {
-        transform: scale(0.95);
-        filter: brightness(1.15);
-    }
-}
-
-@media (max-width: 768px) {
-    .contenido > a.btn[href*="wa.me"] {
-        display: none;
     }
 }
 
@@ -360,27 +286,35 @@ body{
     100% { box-shadow: 0 0 0 0 rgba(52,168,83,0); }
 }
 
-.subtitulo {
-    margin-top: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
+@keyframes shineBtn {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
+.subtitulo{
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    color: #f5f5f5;
+}
+
+@media (max-width: 768px){
+    .subtitulo{
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+}
+
 .subtitulo-servicios{
     max-width: 420px;
     margin: 0 auto 20px;
     font-size: 14px;
     line-height: 1.6;
     opacity: 0.9;
-}
-
-.servicios-lista{
-    max-width: 360px;
-    margin: 0 auto 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
 }
 
 .servicio-item{
@@ -396,21 +330,12 @@ body{
     margin-top: 4px;
     font-size: 14px;
     font-weight: 700;
-    color: #ffd700;
 }
 
 .servicio-item small{
     display: block;
     font-size: 12px;
     opacity: 0.8;
-}
-
-.nota-servicios{
-    max-width: 420px;
-    margin: 10px auto 20px;
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: 0.95;
 }
 
 .garantia{
@@ -427,13 +352,17 @@ body{
     opacity: 0.9;
 }
 
+.subtitulo-productos{
+    color: rgba(242,193,209,0.85); /* rosita más suave */
+}
+
 /* ORDEN PROFESIONAL DE PRODUCTOS */
 .producto-marca{
     display: block;
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #ffd700;
+    color: #e5e5e5;
     margin-bottom: 4px;
 }
 
@@ -447,7 +376,7 @@ body{
     display: block;
     font-size: 14px;
     font-weight: 700;
-    color: #ffd700;
+    color: #ffffff;
     margin-bottom: 6px;
 }
 
@@ -466,17 +395,17 @@ body{
 }
 
 .producto-item{
-    background: rgba(255,255,255,0.08);
-    border-radius: 18px;
-    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .producto-item img{
-    width: 100%;
-    height: auto;
-    max-height: 320px;
-    object-fit: contain;
-    background: #000;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .producto-info{
@@ -490,7 +419,7 @@ body{
     margin-top: 4px;
     font-size: 14px;
     font-weight: 700;
-    color: #ffd700;
+   color: var(--femenino);
 }
 
 .producto-info small{
@@ -499,53 +428,23 @@ body{
     opacity: 0.85;
 }
 
-.nota-productos{
+.nota-productos.femenina{
     max-width: 420px;
-    margin: 10px auto 20px;
-    font-size: 14px;
-    line-height: 1.6;
+    margin: 32px auto 24px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: center;
+    letter-spacing: 0.6px;
+    color: #f2c1d1; /* rosa femenino suave */
     opacity: 0.95;
 }
+
 .servicios {
   max-width: 900px;
   margin: auto;
   padding: 40px 20px;
-  font-family: Arial, sans-serif;
-}
-
-.servicios h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.nota {
-  text-align: center;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.servicio {
-  background: rgba(0,0,0,0.05);
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.servicio img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 12px;
-  cursor: zoom-in;
-  transition: transform 0.3s;
-}
-
-.servicio h3 {
-  margin-top: 15px;
-}
-
-.servicio p {
-  color: #eee;
 }
 
 .garantia {
@@ -561,7 +460,7 @@ body{
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .zoom-overlay img{
@@ -579,6 +478,75 @@ body{
     cursor: pointer;
 }
 
+/* Cursor de zoom para imágenes clickeables */
+.producto-item img,
+#galeria img,
+.seccion img {
+    cursor: zoom-in;
+}
+
+.nota-productos {
+  margin-top: 50px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.btn:last-of-type {
+  margin-bottom: 40px;
+}
+
+
+
+/* CONTROL CORRECTO DE SECCIONES */
+.seccion {
+  display: none;        /* ocultas por defecto */
+  position: relative;
+  z-index: 2;           /* ⬅️ CLAVE: encima del overlay */
+  min-height: auto;
+  height: auto;
+  padding: 60px 20px;
+}
+
+
+
+/* CONTENEDOR REAL DE PRODUCTOS */
+.productos-inner {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left;      /* ⬅️ CLAVE */
+}
+
+/* TÍTULO CENTRADO, CONTENIDO NORMAL */
+#productos .titulo,
+#productos .subtitulo-productos {
+  text-align: center;
+}
+
+/* ===== PRODUCTOS (DEFINITIVO) ===== */
+#productos {
+  padding: 60px 0;
+}
+
+.productos-inner {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left; /* rompe el centrado del body */
+}
+
+#productos .titulo,
+#productos .subtitulo-productos {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.productos-lista {
+  margin: 0;
+  padding: 0;
+}
 
 </style>
 </head>
@@ -603,22 +571,29 @@ body{
          class="logo"
          alt="Logotipo Estética Gold Glam"
          onclick="regresar()">
-    <h1>Belleza y Estilo</h1>
-<p class="subtitulo">Atención personalizada y resultados reales</p>
+<h1>Color y Cuidado Capilar</h1>
+<p class="subtitulo">
+Servicios y productos profesionales en Tepic, Nayarit
+</p>
 
-<button class="btn" onclick="mostrar('servicios')">
- ✂️ Servicios
-</button>
+<a class="btn btn-principal"
+   href="https://wa.me/523112553233?text=Hola,%20buen%20día%20%0AMe%20gustaría%20agendar%20una%20cita%20y%20recibir%20una%20cotización,%20por%20favor.%0AGracias."
+   target="_blank">
+💬 Agenda tu cita
+</a>
 
 <button class="btn" onclick="mostrar('productos')">
- 🧴 Productos
+🧴 Ver productos
+</button>
+
+<button class="btn" onclick="mostrar('servicios')">
+✂️ Servicios
 </button>
 
 <button class="btn" onclick="mostrar('galeria')">
- 🖼️ Galería
+🖼️ Resultados
 </button>
-  
-    <a class="btn" href="https://wa.me/523112553233" target="_blank"><i class="fa-brands fa-whatsapp"></i> Agendar Cita</a>
+
 
     <div class="social-container">
         <a class="social-circle tikTok" href="https://vm.tiktok.com/ZSHKkXs37drKQ-NFZH4/" target="_blank">
@@ -765,78 +740,83 @@ body{
 
   <p class="garantia">💖 Todos nuestros servicios cuentan con garantía 💖</p>
 
-  <a class="btn-regresar" onclick="regresar()">⬅️ Regresar</a>
+  <a class="btn" onclick="regresar()">⬅️ Regresar</a>
+
 </section>
 
 
 <div class="seccion" id="productos">
+  <div class="productos-inner">
   <h2 class="titulo">Productos</h2>
 
 <p class="subtitulo-productos">
-Trabajamos con productos profesionales y originales, seleccionados para
-cuidar y mantener la salud de tu cabello desde casa.
-La disponibilidad puede variar.
+Trabajamos con productos profesionales y originales, cuidadosamente seleccionados
+para cuidar y mantener la salud y belleza de tu cabello desde casa.
+<br>La disponibilidad puede variar según existencia.
 </p>
+
 
 <div class="productos-lista">
 
-<div class="producto-item">
-  <img src="https://i.ibb.co/W4gN90kK/1.png"
-       alt="Davines LOVE Curl Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
+  <!-- PRODUCTO 1 -->
+  <div class="producto-item">
+    <img src="https://i.ibb.co/W4gN90kK/1.png"
+         alt="Davines LOVE Curl Conditioner"
+         loading="lazy"
+         onclick="zoomImagen(this.src)">
 
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
+    <div class="producto-info">
+      <strong class="producto-marca">DAVINES</strong>
 
-    <div class="producto-nombre">
-      LOVE Curl Conditioner · Acondicionador para rizos
+      <div class="producto-nombre">
+        LOVE Curl Conditioner · Acondicionador para rizos
+      </div>
+
+      <span class="producto-precio">$750 MXN</span>
+
+      <small class="producto-desc">
+        Acondicionador profesional para cabello ondulado o rizado.
+        Define los rizos, controla el frizz y aporta suavidad y elasticidad
+        sin apelmazar, dejando el cabello más manejable y con movimiento natural.
+        <br><br>
+        📦 Presentación: 250 ml · Uso profesional y en casa.
+      </small>
     </div>
-
-    <span class="producto-precio">$750 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional para cabello ondulado o rizado.
-      Define los rizos, controla el frizz y aporta suavidad y elasticidad
-      sin apelmazar, dejando el cabello más manejable y con movimiento natural.
-      <br><br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
   </div>
-</div>
 
-<div class="producto-item">
-  <img src="https://i.ibb.co/DDnpxxfC/2.png"
-       alt="Davines Naturaltech Replumping Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
+  <!-- PRODUCTO 2 -->
+  <div class="producto-item">
+    <img src="https://i.ibb.co/DDnpxxfC/2.png"
+         alt="Davines Naturaltech Replumping Shampoo"
+         loading="lazy"
+         onclick="zoomImagen(this.src)">
 
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
+    <div class="producto-info">
+      <strong class="producto-marca">DAVINES</strong>
 
-    <div class="producto-nombre">
-      Naturaltech Replumping Shampoo · Shampoo hidratante
+      <div class="producto-nombre">
+        Naturaltech Replumping Shampoo · Shampoo hidratante
+      </div>
+
+      <span class="producto-precio">$685 MXN</span>
+
+      <small class="producto-desc">
+        Shampoo profesional hidratante y elasticizante ideal para cabello seco o deshidratado.
+        Limpia suavemente mientras aporta cuerpo, elasticidad y suavidad,
+        dejando el cabello más flexible, brillante y con sensación de volumen natural.
+        <br><br>
+        🌿 Ingrediente clave: extractos fitocéuticos de ciruela, ricos en antioxidantes.
+        <br>
+        📦 Presentación: 250 ml · Uso profesional y en casa.
+      </small>
     </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional hidratante y elasticizante ideal para cabello seco o deshidratado.
-      Limpia suavemente mientras aporta cuerpo, elasticidad y suavidad,
-      dejando el cabello más flexible, brillante y con sensación de volumen natural.
-      <br><br>
-      🌿 Ingrediente clave: extractos fitocéuticos de ciruela, ricos en antioxidantes.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
   </div>
-</div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/NdHnWtTY/3.png"
        alt="Davines Heart of Glass Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
+       loading="lazy"
+       onclick="zoomImagen(this.src)">
 
   <div class="producto-info">
     <strong class="producto-marca">DAVINES</strong>
@@ -859,13 +839,14 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+  </div>
 
-<div class="producto-item">
+
+ <div class="producto-item">
   <img src="https://i.ibb.co/bR1gywhy/4.png"
        alt="Davines Heart of Glass Intense Treatment"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
+       loading="lazy"
+       onclick="zoomImagen(this.src)">
 
   <div class="producto-info">
     <strong class="producto-marca">DAVINES</strong>
@@ -888,13 +869,13 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/qFJ190Qt/5.png"
        alt="Davines Beautiful Things Restoring Leave-In"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
+       loading="lazy"
+       onclick="zoomImagen(this.src)">
 
   <div class="producto-info">
     <strong class="producto-marca">DAVINES</strong>
@@ -917,9 +898,10 @@ La disponibilidad puede variar.
       📦 Presentación: 90 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+
+ <div class="producto-item">
   <img src="https://i.ibb.co/v4jWzQLJ/6.png"
        alt="Davines NOUNOU Conditioner"
        onclick="zoomImagen(this.src)"
@@ -945,9 +927,10 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+
+ <div class="producto-item">
   <img src="https://i.ibb.co/sdS6JBf4/7.png"
        alt="Davines NOUNOU Shampoo"
        onclick="zoomImagen(this.src)"
@@ -973,9 +956,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/3YmJFVKR/8.png"
        alt="Davines OI All In One Milk"
        onclick="zoomImagen(this.src)"
@@ -1001,9 +984,9 @@ La disponibilidad puede variar.
       📦 Presentación: 135 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/DfhhCXWN/9.png"
        alt="Davines OI Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1030,9 +1013,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/1tWzT9TC/10.png"
        alt="Davines OI Oil"
        onclick="zoomImagen(this.src)"
@@ -1058,9 +1041,9 @@ La disponibilidad puede variar.
       📦 Presentación: 135 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/6c7L0w2X/11.png"
        alt="Davines Naturaltech Energizing Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1087,9 +1070,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/mr41HPHY/12.png"
        alt="Davines LOVE Curl Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1116,9 +1099,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/0R0zsdFX/13.png"
        alt="Davines Naturaltech Rebalancing Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1146,9 +1129,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/k2f13FZC/14.png"
        alt="Davines Heart of Glass Sheer Glaze"
        onclick="zoomImagen(this.src)"
@@ -1175,9 +1158,9 @@ La disponibilidad puede variar.
       📦 Presentación: 150 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/mrjWmShK/15.png"
        alt="Davines Heart of Glass Silkening Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1205,9 +1188,9 @@ La disponibilidad puede variar.
       📦 Presentación: 250 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/7dqsZRzF/16.png"
        alt="Redken Color Extend Blondage Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1235,9 +1218,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/bgbMtcGN/17.png"
        alt="Redken All Soft Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1265,9 +1248,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/kVt4LTN1/18.png"
        alt="Redken All Soft Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1294,9 +1277,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/zh5ysmfV/19.png"
        alt="Redken Extreme Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1324,9 +1307,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/YTjsMGKy/20.png"
        alt="Redken Extreme Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1354,9 +1337,10 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
+ 
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/MD6vtXYc/21.png"
        alt="Redken Frizz Dismiss Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1384,9 +1368,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/KjyVG9R8/22.png"
        alt="Redken Frizz Dismiss Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1414,9 +1398,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/GfKpDr1K/23.png"
        alt="Redken Acidic Color Gloss Gentle Color Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1444,9 +1428,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/PGYYNdXY/24.png"
        alt="Redken Acidic Bonding Concentrate Serum"
        onclick="zoomImagen(this.src)"
@@ -1474,9 +1458,9 @@ La disponibilidad puede variar.
       📦 Presentación: 100 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/zWGmM3kT/25.png"
        alt="Redken Acidic Bonding Concentrate Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1505,9 +1489,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/7t9hwZ30/27.png"
        alt="Davines The Renaissance Circle"
        onclick="zoomImagen(this.src)"
@@ -1535,9 +1519,9 @@ La disponibilidad puede variar.
       📦 Presentación: 50 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/sd4vCf9f/28.png"
        alt="Redken Acidic Bonding Concentrate Shampoo"
        onclick="zoomImagen(this.src)"
@@ -1565,9 +1549,9 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/ccstRsVc/29.png"
        alt="Redken Acidic Bonding Concentrate Leave-In Treatment"
        onclick="zoomImagen(this.src)"
@@ -1595,9 +1579,9 @@ La disponibilidad puede variar.
       📦 Presentación: 150 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+ </div>
 
-<div class="producto-item">
+ <div class="producto-item">
   <img src="https://i.ibb.co/SwBDwxxg/30.png"
        alt="Redken Acidic Color Gloss Conditioner"
        onclick="zoomImagen(this.src)"
@@ -1625,24 +1609,18 @@ La disponibilidad puede variar.
       📦 Presentación: 300 ml · Uso profesional y en casa.
     </small>
   </div>
-</div>
+</div> <!-- productos-lista -->
 
-
-
-   
-<div class="nota-productos">
-Si buscas un producto específico o deseas una recomendación personalizada,
-con gusto te asesoramos 💖
-</div>
+<p class="nota-productos femenina">
+Si buscas un producto específico o una recomendación personalizada,
+<br>con gusto te asesoramos 💖
+</p>
 
 <a class="btn" href="https://wa.me/523112553233" target="_blank">
 💬 Consultar productos por WhatsApp
 </a>
 
-<a class="btn-regresar" onclick="regresar()">
-⬅️ Regresar
-</a>
-</div>
+<a class="btn" onclick="regresar()">⬅️ Regresar</a>
 
 <div class="seccion" id="galeria">
   <h2 class="titulo">Antes y Después</h2>
@@ -1707,9 +1685,8 @@ con gusto te asesoramos 💖
 
   </div>
 
-  <a class="btn-regresar" onclick="regresar()">
-    <i class="fa-solid fa-arrow-left"></i> Regresar
-  </a>
+ <a class="btn" onclick="regresar()">⬅️ Regresar</a>
+
 </div>
 
 
@@ -1718,7 +1695,7 @@ con gusto te asesoramos 💖
 // CREAR BRILLOS
 
 function crearBrillos() {
-    const count = window.innerWidth < 768 ? 15 : 40;
+    const count = window.innerWidth < 768 ? 8 : 30;
 
     for (let i = 0; i < count; i++) {
         const spark = document.createElement('div');
@@ -1776,6 +1753,31 @@ function zoomImagen(src) {
 function cerrarZoom() {
     document.getElementById("zoomOverlay").style.display = "none";
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const lista = document.querySelector(".productos-lista");
+    if (!lista) return;
+
+    const productos = Array.from(lista.querySelectorAll(".producto-item"));
+
+    productos.sort((a, b) => {
+        const marcaA = a.querySelector(".producto-marca")?.innerText.trim().toUpperCase() || "";
+        const marcaB = b.querySelector(".producto-marca")?.innerText.trim().toUpperCase() || "";
+
+        if (marcaA < marcaB) return -1;
+        if (marcaA > marcaB) return 1;
+
+        const nombreA = a.querySelector(".producto-nombre")?.innerText.trim().toUpperCase() || "";
+        const nombreB = b.querySelector(".producto-nombre")?.innerText.trim().toUpperCase() || "";
+
+        return nombreA.localeCompare(nombreB, "es", { sensitivity: "base" });
+    });
+
+    productos.forEach(producto => lista.appendChild(producto));
+});
+
+
 
 </script>
 
