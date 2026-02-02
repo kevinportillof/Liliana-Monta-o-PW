@@ -372,12 +372,14 @@ body{
     margin-bottom: 6px;
 }
 
-.producto-precio{
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
+.producto-precio {
+  background: rgba(242,193,209,0.15);
+  padding: 6px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 8px;
 }
 
 .producto-desc{
@@ -386,12 +388,12 @@ body{
     line-height: 1.5;
 }
 
-.productos-lista{
-    max-width: 380px;
-    margin: 0 auto 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.productos-lista {
+  max-width: 380px;
+  margin: 10px auto 24px; /* 👈 antes estaba empujando */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .producto-item{
@@ -543,9 +545,60 @@ body{
   margin-bottom: 20px;
 }
 
-.productos-lista {
-  margin: 0;
-  padding: 0;
+.producto-desc.completa {
+  display: none;
+}
+
+.ver-mas {
+  background: none;
+  border: none;
+  color: #f2c1d1;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.marca-titulo {
+  margin: 30px 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #f2c1d1;
+}
+
+.producto-item .btn {
+  width: 100%;
+  max-width: none;
+  font-size: 15px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.subtitulo-productos {
+  margin-bottom: 10px; /* 👈 CLAVE */
+}
+
+#productos .productos-inner {
+  padding-top: 0;   /* 👈 evita empuje invisible */
+}
+
+#buscador {
+  margin-bottom: 12px;
+}
+
+/* 🔥 FIX DEFINITIVO DE ESPACIO */
+#productos {
+  padding-top: 20px;   /* antes 60px */
+  padding-bottom: 20px;
+}
+
+#productos .productos-inner {
+  padding-top: 0;
+}
+
+/* 🔧 PASO 4: PEGAR PRODUCTOS AL TEXTO DE EXISTENCIA */
+.subtitulo-productos {
+  margin-bottom: 6px !important;
 }
 
 </style>
@@ -748,6 +801,21 @@ Servicios y productos profesionales en Tepic, Nayarit
 <div class="seccion" id="productos">
   <div class="productos-inner">
   <h2 class="titulo">Productos</h2>
+
+  <input 
+  type="text" 
+  id="buscador"
+  placeholder="Buscar producto (ej. shampoo, rizos, rubio)"
+  style="
+    width:100%;
+    padding:14px;
+    border-radius:16px;
+    border:none;
+    margin:20px 0;
+    font-size:15px;
+  "
+>
+
 
 <p class="subtitulo-productos">
 Trabajamos con productos profesionales y originales, cuidadosamente seleccionados
@@ -1621,6 +1689,8 @@ Si buscas un producto específico o una recomendación personalizada,
 </a>
 
 <a class="btn" onclick="regresar()">⬅️ Regresar</a>
+</div><!-- productos-inner -->
+</div><!-- seccion productos -->
 
 <div class="seccion" id="galeria">
   <h2 class="titulo">Antes y Después</h2>
@@ -1777,7 +1847,15 @@ document.addEventListener("DOMContentLoaded", () => {
     productos.forEach(producto => lista.appendChild(producto));
 });
 
+document.getElementById("buscador").addEventListener("keyup", function () {
+  const texto = this.value.toLowerCase();
 
+  document.querySelectorAll(".producto-item").forEach(producto => {
+    producto.style.display = producto.innerText.toLowerCase().includes(texto)
+      ? "block"
+      : "none";
+  });
+});
 
 </script>
 
