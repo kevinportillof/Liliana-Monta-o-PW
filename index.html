@@ -2036,19 +2036,77 @@ if (lista) {
   productos.forEach(producto => lista.appendChild(producto));
 }
 
-  /* 🔍 BUSCADOR */
-  const buscador = document.getElementById("buscador");
-  if (buscador) {
-    buscador.addEventListener("keyup", function () {
-      const texto = this.value.toLowerCase();
+ /* 🔍 BUSCADOR INTELIGENTE */
+const buscador = document.getElementById("buscador");
 
-      document.querySelectorAll(".producto-item").forEach(producto => {
-        producto.style.display = producto.innerText.toLowerCase().includes(texto)
-          ? "block"
-          : "none";
-      });
+function normalizar(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+const sinonimos = {
+  pelo: "cabello",
+  cabello: "cabello",
+
+  reseco: "seco",
+  reseca: "seco",
+  seco: "seco",
+
+  frizz: "encrespado",
+  esponjado: "encrespado",
+  encrespado: "encrespado",
+
+  rizo: "rizado",
+  rizos: "rizado",
+  chino: "rizado",
+  chinos: "rizado",
+  ondulado: "rizado",
+
+  rubio: "rubio",
+  rubios: "rubio",
+  decolorado: "rubio",
+  decoloracion: "rubio",
+
+  tinte: "teñido",
+  tintes: "teñido",
+  teñido: "teñido",
+  color: "teñido",
+
+  caida: "caida",
+  secae: "caida",
+  anticaida: "caida",
+
+  dañado: "dañado",
+  maltratado: "dañado",
+  quemado: "dañado",
+
+  hidratante: "hidratado",
+  hidratado: "hidratado",
+  suave: "hidratado",
+
+  brillo: "brillo",
+  opaco: "brillo"
+};
+
+if (buscador) {
+  buscador.addEventListener("input", function () {
+    let texto = normalizar(this.value);
+
+    Object.keys(sinonimos).forEach(palabra => {
+      texto = texto.replaceAll(palabra, sinonimos[palabra]);
     });
-  }
+
+    document.querySelectorAll(".producto-item").forEach(producto => {
+      const contenido = normalizar(producto.innerText);
+      producto.style.display = contenido.includes(texto)
+        ? "block"
+        : "none";
+    });
+  });
+}
+
 
   /* 📦 PRODUCTOS */
   const productos = document.querySelectorAll(".producto-item");
