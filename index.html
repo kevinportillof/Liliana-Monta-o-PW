@@ -41,27 +41,6 @@ body{
 }
 
 
- /* BRILLOS DORADOS SOBRE TODO EL SITIO */
-.spark {
-    position: fixed; /* fijo sobre todo el body */
-    width: 6px;
-    height: 6px;
-    background: #E91E63;
-    border-radius: 50%;
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: 800; /* siempre encima */
-    animation-name: shineFall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes shineFall {
-    0% { transform: translateY(-10px) scale(0.5); opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { transform: translateY(100vh) scale(1); opacity: 0; }
-}
-
    .overlay {
     background: radial-gradient(circle at top, rgba(0,0,0,0.45), rgba(0,0,0,0.7));
     width: 100%;
@@ -240,13 +219,7 @@ body{
         height: 42px;
         font-size: 18px;
     }
-
-    /* Brillos más ligeros en celular */
-    .spark{
-        opacity: 0.25;
-        filter: blur(2px);
-    }
-}
+} /* ← CIERRA EL @media (max-width: 768px) */
 
 /* BOTÓN WHATSAPP FLOTANTE SOLO CELULAR */
 .whatsapp-float {
@@ -317,27 +290,6 @@ body{
     font-size: 14px;
     line-height: 1.6;
     opacity: 0.9;
-}
-
-.servicio-item{
-    padding: 14px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.08);
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.servicio-item span{
-    display: block;
-    margin-top: 4px;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.servicio-item small{
-    display: block;
-    font-size: 12px;
-    opacity: 0.8;
 }
 
 .garantia{
@@ -649,70 +601,70 @@ body{
   text-decoration: none;
 }
 
-@media (min-width: 1024px){
-  .producto-item img{
-    height: 300px;
-  }
-}
+/* ===== SERVICIOS – BRILLO BASE ===== */
 
-/* ===== SERVICIOS PREMIUM ===== */
-
-.grupo-servicios{
-  margin-top: 40px;
-}
-
-/* tarjetas de servicio */
 .servicio-item{
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.12);
   padding: 18px;
   border-radius: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+
+  /* brillo suave */
+  border: 1px solid rgba(242,193,209,0.35);
+  box-shadow:
+    0 0 10px rgba(242,193,209,0.22),
+    0 0 20px rgba(242,193,209,0.12);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 1024px){
+.servicio-item.destacado{
+  border: 1px solid rgba(242,193,209,0.7);
+  box-shadow:
+    0 0 18px rgba(242,193,209,0.55),
+    0 0 35px rgba(242,193,209,0.35);
+}
+
+@media (min-width: 768px){
   .servicio-item:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 16px rgba(242,193,209,0.45),
+      0 0 30px rgba(242,193,209,0.25);
+  }
+
+  .servicio-item.destacado:hover{
+    box-shadow:
+      0 0 24px rgba(242,193,209,0.75),
+      0 0 45px rgba(242,193,209,0.45);
   }
 }
 
-/* servicio destacado */
-.servicio-item.destacado{
-  border: 1px solid rgba(242,193,209,0.6);
-  box-shadow: 0 0 14px rgba(242,193,209,0.25);
-}
-
-/* títulos dentro del servicio */
 .servicio-item strong{
   font-size: 16px;
-  letter-spacing: 0.6px;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(242,193,209,0.6);
 }
 
-/* texto descriptivo */
-.servicio-item small{
-  display: block;
-  margin-top: 6px;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-/* etiquetas (precios / alisado) */
 .servicio-item span{
   display: inline-block;
   margin-top: 6px;
   font-size: 13px;
   font-weight: 700;
-  color: #f2c1d1;
+  color: #ffd6e5;
+  text-shadow: 0 0 6px rgba(242,193,209,0.8);
 }
 
-#servicios .btn{
-  margin-top: 25px;
-}
-
-#servicios .garantia{
-  margin-top: 30px;
+.servicio-item small{
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #f2f2f2;
   opacity: 0.95;
 }
 
@@ -899,9 +851,11 @@ Servicios y productos profesionales en Tepic, Nayarit
     </div>
 
     <div class="servicio-item">
-      ✨ <strong>Depilación facial</strong>
+     ✨ <strong>Depilación facial</strong>
       <small>
-        Cejas $150 · Bozo $85 · Rostro completo $250
+       Cejas <span class="precio">$150</span> ·
+       Bozo <span class="precio">$85</span> ·
+       Rostro completo <span class="precio">$250</span>
       </small>
     </div>
 
@@ -1987,112 +1941,117 @@ Servicios y productos profesionales en Tepic, Nayarit
 
 </div>
 
-
 <script>
-
-// CREAR BRILLOS
-
-function crearBrillos() {
-    const count = window.innerWidth < 768 ? 8 : 30;
-
-    for (let i = 0; i < count; i++) {
-        const spark = document.createElement('div');
-        spark.className = 'spark';
-        spark.style.left = Math.random() * window.innerWidth + 'px';
-        spark.style.top = -(Math.random() * 100) + 'px';
-
-        const size = Math.random() * 4 + 3;
-        spark.style.width = spark.style.height = size + 'px';
-
-        spark.style.animationDuration = (Math.random() * 5 + 5) + 's';
-        spark.style.animationDelay = (Math.random() * 5) + 's';
-
-        document.body.appendChild(spark);
-    }
-}
-crearBrillos();
-
-
-// NAVEGACIÓN
+/* =========================
+   NAVEGACIÓN ENTRE SECCIONES
+========================= */
 
 function mostrar(id) {
-    document.getElementById("inicio").style.display = "none";
-    document.querySelectorAll(".seccion").forEach(sec => sec.style.display = "none");
-    const seccion = document.getElementById(id);
-    seccion.style.display = "block";
+  const inicio = document.getElementById("inicio");
+  const secciones = document.querySelectorAll(".seccion");
+  const destino = document.getElementById(id);
+
+  if (inicio) inicio.style.display = "none";
+  secciones.forEach(sec => sec.style.display = "none");
+
+  if (destino) {
+    destino.style.display = "block";
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 function regresar() {
-    document.querySelectorAll(".seccion").forEach(sec => sec.style.display = "none");
-    document.getElementById("inicio").style.display = "block";
+  const inicio = document.getElementById("inicio");
+  const secciones = document.querySelectorAll(".seccion");
+
+  secciones.forEach(sec => sec.style.display = "none");
+  if (inicio) inicio.style.display = "block";
 }
 
+/* =========================
+   MAPAS
+========================= */
+
 function abrirMapa() {
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        window.open(
-            "https://maps.apple.com/?address=Calle%20Quebec%2088,%20Ciudad%20del%20Valle,%2063157%20Tepic,%20Nay.,%20M%C3%A9xico&auid=7897208075626208427&ll=21.496440,-104.886634&lsp=9902&q=Liliana%20Monta%C3%B1o%20Pretty%20woman&_ext=CjkKBQgEEKUBCgQIBRADCgQIBhBnCgQIChAACgQIUhABCgQIVRAQCgQIWRADCgUIpAEQAQoFCMEBEAESJil//AD/7301QDHnXhbJDTlawDmTXophPYA1QEFWxQptbzhawFAE"
-        );
-    } else {
-        window.open(
-            "https://maps.app.goo.gl/dza9uPuFsoeZUvx79?g_st=aw",
-            "_blank"
-        );
-    }
+  const esApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const appleMaps = "https://maps.apple.com/?address=Calle%20Quebec%2088,%20Ciudad%20del%20Valle,%2063157%20Tepic,%20Nay.,%20México";
+  const googleMaps = "https://maps.app.goo.gl/dza9uPuFsoeZUvx79";
+
+  window.open(esApple ? appleMaps : googleMaps, "_blank");
 }
- 
+
+/* =========================
+   ZOOM DE IMÁGENES
+========================= */
+
 function zoomImagen(src) {
-    const overlay = document.getElementById("zoomOverlay");
-    const img = document.getElementById("zoomImg");
+  const overlay = document.getElementById("zoomOverlay");
+  const img = document.getElementById("zoomImg");
+
+  if (overlay && img) {
     img.src = src;
     overlay.style.display = "flex";
+  }
 }
 
 function cerrarZoom() {
-    document.getElementById("zoomOverlay").style.display = "none";
+  const overlay = document.getElementById("zoomOverlay");
+  if (overlay) overlay.style.display = "none";
 }
 
+/* =========================
+   PRODUCTOS (BUSCADOR + VER MÁS)
+========================= */
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  /* 🔍 BUSCADOR */
+  const buscador = document.getElementById("buscador");
+  if (buscador) {
+    buscador.addEventListener("keyup", function () {
+      const texto = this.value.toLowerCase();
 
-document.getElementById("buscador").addEventListener("keyup", function () {
-  const texto = this.value.toLowerCase();
+      document.querySelectorAll(".producto-item").forEach(producto => {
+        producto.style.display = producto.innerText.toLowerCase().includes(texto)
+          ? "block"
+          : "none";
+      });
+    });
+  }
 
-  document.querySelectorAll(".producto-item").forEach(producto => {
-    producto.style.display = producto.innerText.toLowerCase().includes(texto)
-      ? "block"
-      : "none";
-  });
-});
-document.querySelectorAll(".producto-item").forEach(producto => {
+  /* 📦 PRODUCTOS */
+  const productos = document.querySelectorAll(".producto-item");
+  if (!productos.length) return;
 
-  const btnVerMas = producto.querySelector(".ver-mas");
-  const descCorta = producto.querySelector(".producto-desc.corta");
-  const descCompleta = producto.querySelector(".producto-desc.completa");
-  const btnWhatsapp = producto.querySelector(".btn-whatsapp-producto");
-  const nombreProducto = producto.querySelector(".producto-nombre").innerText;
+  productos.forEach(producto => {
 
-  // VER MÁS / VER MENOS
-  btnVerMas.addEventListener("click", () => {
-    const abierto = descCompleta.style.display === "block";
+    const btnVerMas = producto.querySelector(".ver-mas");
+    const descCorta = producto.querySelector(".producto-desc.corta");
+    const descCompleta = producto.querySelector(".producto-desc.completa");
+    const btnWhatsapp = producto.querySelector(".btn-whatsapp-producto");
+    const nombreProducto = producto.querySelector(".producto-nombre")?.innerText || "";
 
-    if (abierto) {
-      descCompleta.style.display = "none";
-      descCorta.style.display = "block";
-      btnVerMas.innerText = "Ver descripción completa";
-    } else {
-      descCompleta.style.display = "block";
-      descCorta.style.display = "none";
-      btnVerMas.innerText = "Ver menos";
+    /* VER MÁS / VER MENOS */
+    if (btnVerMas && descCorta && descCompleta) {
+      btnVerMas.addEventListener("click", () => {
+        const abierto = descCompleta.style.display === "block";
+
+        descCompleta.style.display = abierto ? "none" : "block";
+        descCorta.style.display = abierto ? "block" : "none";
+        btnVerMas.innerText = abierto ? "Ver descripción completa" : "Ver menos";
+      });
     }
+
+    /* WHATSAPP POR PRODUCTO */
+    if (btnWhatsapp && nombreProducto) {
+      const mensaje = `Hola, me interesa el producto: ${nombreProducto}`;
+      btnWhatsapp.href = `https://wa.me/523112553233?text=${encodeURIComponent(mensaje)}`;
+    }
+
   });
 
-  // WHATSAPP POR PRODUCTO
-  const mensaje = `Hola, me interesa el producto: ${nombreProducto}`;
-  btnWhatsapp.href = `https://wa.me/523112553233?text=${encodeURIComponent(mensaje)}`;
-
 });
-
 </script>
 
 </body>
