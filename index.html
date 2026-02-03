@@ -668,6 +668,22 @@ body{
   opacity: 0.95;
 }
 
+/* OCULTAR OVERLAY FUERA DE INICIO */
+.seccion {
+  background: transparent;
+}
+
+/* ===== GALERÍA SIN FONDO PROPIO ===== */
+#galeria{
+  background: transparent;
+}
+
+#galeria .titulo,
+#galeria .subtitulo-servicios{
+  color: #222;
+}
+
+
 </style>
 </head>
 <body>
@@ -711,7 +727,7 @@ Servicios y productos profesionales en Tepic, Nayarit
 </button>
 
 <button class="btn" onclick="mostrar('galeria')">
-🖼️ Resultados
+🖼️ galeria
 </button>
 
 
@@ -1870,8 +1886,8 @@ Servicios y productos profesionales en Tepic, Nayarit
 
     <a class="btn" onclick="regresar()">⬅️ Regresar</a>
 
-  <div><!-- productos-inner -->
-</div><!-- seccion productos -->
+  </div><!-- /.productos-inner -->
+</div><!-- /.seccion productos -->
 
 
 <div class="seccion" id="galeria">
@@ -2005,6 +2021,20 @@ function cerrarZoom() {
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* 🔤 ORDEN ALFABÉTICO DE PRODUCTOS */
+const lista = document.querySelector(".productos-lista");
+
+if (lista) {
+  const productos = Array.from(lista.querySelectorAll(".producto-item"));
+
+  productos.sort((a, b) => {
+    const nombreA = a.querySelector(".producto-nombre")?.innerText.toLowerCase() || "";
+    const nombreB = b.querySelector(".producto-nombre")?.innerText.toLowerCase() || "";
+    return nombreA.localeCompare(nombreB);
+  });
+
+  productos.forEach(producto => lista.appendChild(producto));
+}
 
   /* 🔍 BUSCADOR */
   const buscador = document.getElementById("buscador");
