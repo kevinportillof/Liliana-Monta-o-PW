@@ -206,11 +206,13 @@ body{
         max-width: 280px;
     }
 
-    h1{
+     h1{
         font-size: 34px;
         margin-top: 10px;
-        text-shadow: 0 0 8px #ffd700;
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(255,255,255,0.9);
     }
+
 
     .btn{
         width: 90%;
@@ -293,13 +295,13 @@ body{
 }
 
 .subtitulo{
-    margin-top: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    opacity: 0.85;
-    color: #f5f5f5;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #f2c1d1;
 }
 
 @media (max-width: 768px){
@@ -647,6 +649,64 @@ body{
   text-decoration: none;
 }
 
+@media (min-width: 1024px){
+  .producto-item img{
+    height: 300px;
+  }
+}
+
+/* ===== SERVICIOS PREMIUM ===== */
+
+.grupo-servicios{
+  margin-top: 40px;
+}
+
+/* tarjetas de servicio */
+.servicio-item{
+  background: rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 1024px){
+  .servicio-item:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+  }
+}
+
+/* servicio destacado */
+.servicio-item.destacado{
+  border: 1px solid rgba(242,193,209,0.6);
+  box-shadow: 0 0 14px rgba(242,193,209,0.25);
+}
+
+/* títulos dentro del servicio */
+.servicio-item strong{
+  font-size: 16px;
+  letter-spacing: 0.6px;
+}
+
+/* texto descriptivo */
+.servicio-item small{
+  display: block;
+  margin-top: 6px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* etiquetas (precios / alisado) */
+.servicio-item span{
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f2c1d1;
+}
+
 </style>
 </head>
 <body>
@@ -712,7 +772,6 @@ Servicios y productos profesionales en Tepic, Nayarit
     </div>
 </div>
 
-<!-- SECCIONES -->
 <section class="seccion servicios" id="servicios">
   <h2 class="titulo">Nuestros Servicios</h2>
 
@@ -721,126 +780,146 @@ Servicios y productos profesionales en Tepic, Nayarit
     cuidando la salud y calidad de tu cabello.
   </p>
 
-  <!-- COLORACIÓN -->
-  <div class="servicio-item">
-    ✨ <strong>Babylights</strong>
-    <small>
-      Reflejos ultra finos y delicados que aportan luminosidad natural al cabello.
-      Ideales para un look suave, juvenil y de bajo mantenimiento.
-    </small>
+  <!-- ===== COLORACIÓN ===== -->
+  <div class="grupo-servicios">
+    <h3 class="subtitulo">Coloración Profesional</h3>
+
+    <div class="servicio-item">
+      ✨ <strong>Babylights</strong>
+      <small>
+        Reflejos ultra finos y delicados que aportan luminosidad natural al cabello.
+        Ideales para un look suave, juvenil y de bajo mantenimiento.
+      </small>
+    </div>
+
+    <div class="servicio-item destacado">
+      ✨ <strong>Balayage</strong>
+      <small>
+        Técnica francesa aplicada a mano alzada que crea un degradado natural y elegante,
+        con raíces más oscuras y puntas iluminadas.
+        <br>⏱️ Duración aproximada: 3 a 5 horas.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      ✨ <strong>Highlights</strong>
+      <small>
+        Iluminación estratégica que aporta contraste, profundidad y brillo,
+        imitando los reflejos naturales del sol.
+      </small>
+    </div>
+
+    <div class="servicio-item destacado">
+      ✨ <strong>Diseño Blonder (Rubios personalizados)</strong>
+      <small>
+        Creación de rubios sofisticados y multidimensionales combinando tonos cálidos y fríos,
+        adaptados a tu estilo y facciones para un acabado natural y lujoso.
+        <br>⏱️ Duración aproximada: 4 a 6 horas.
+      </small>
+    </div>
   </div>
 
-  <div class="servicio-item">
-    ✨ <strong>Balayage</strong>
-    <small>
-      Técnica francesa aplicada a mano alzada que crea un degradado natural y elegante,
-      con raíces más oscuras y puntas iluminadas.
-    </small>
+  <!-- ===== TRATAMIENTOS ===== -->
+  <div class="grupo-servicios">
+    <h3 class="subtitulo">Tratamientos Capilares</h3>
+
+    <div class="servicio-item destacado">
+      💖 <strong>Botox Reestructurante</strong>
+      <span>Alisa hasta un 80%</span>
+      <small>
+        Restaura la fibra capilar, elimina el frizz y aporta brillo, suavidad y nutrición profunda.
+        Ideal para cabellos procesados.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      💖 <strong>Botox Hidratante</strong>
+      <span>Alisa hasta un 20%</span>
+      <small>
+        Aporta hidratación, brillo y suavidad, controlando el frizz.
+        Ideal para cabellos secos y deshidratados.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      💖 <strong>Tratamiento de Encerado</strong>
+      <span>No alisa</span>
+      <small>
+        Nutre profundamente, elimina el frizz y aporta brillo y suavidad.
+        Apto para cabellos procesados.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      💖 <strong>Encerado Extra Fuerte</strong>
+      <span>Alisa hasta un 60%</span>
+      <small>
+        Tratamiento reestructurante que reduce la porosidad,
+        aporta brillo intenso y elimina el frizz.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      💖 <strong>Tratamiento Truss</strong>
+      <small>
+        Restaura profundamente el cabello, regula el pH,
+        combate la porosidad y devuelve elasticidad y suavidad.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      💖 <strong>Tratamiento Olaplex</strong>
+      <small>
+        Fortalece el cabello desde el interior, aporta brillo,
+        hidratación y protección contra futuros daños.
+      </small>
+    </div>
   </div>
 
-  <div class="servicio-item">
-    ✨ <strong>Highlights</strong>
-    <small>
-      Iluminación estratégica que aporta contraste, profundidad y brillo,
-      imitando los reflejos naturales del sol.
-    </small>
+  <!-- ===== CORTE Y BELLEZA ===== -->
+  <div class="grupo-servicios">
+    <h3 class="subtitulo">Corte y Detalles de Belleza</h3>
+
+    <div class="servicio-item">
+      ✂️ <strong>Corte de cabello</strong>
+      <span>Desde $350 MXN</span>
+      <small>
+        Incluye lavado y estilizado.
+        El precio puede variar según largo y volumen.
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      ✨ <strong>Depilación facial</strong>
+      <small>
+        Cejas $150 · Bozo $85 · Rostro completo $250
+      </small>
+    </div>
+
+    <div class="servicio-item">
+      ✨ <strong>Lifting de pestañas</strong>
+      <span>$250 MXN</span>
+      <small>
+        Eleva y curva las pestañas naturales desde la raíz,
+        logrando una mirada más definida y femenina sin extensiones.
+      </small>
+    </div>
   </div>
 
-  <div class="servicio-item">
-    ✨ <strong>Diseño Blonder (Rubios personalizados)</strong>
-    <small>
-      Creación de rubios sofisticados y multidimensionales combinando tonos cálidos y fríos,
-      adaptados a tu estilo y facciones para un acabado natural y lujoso.
-    </small>
-  </div>
+  <!-- CTA -->
+  <a class="btn"
+     href="https://wa.me/523112553233?text=Hola,%20me%20gustaría%20agendar%20un%20servicio%20y%20recibir%20una%20cotización."
+     target="_blank">
+    💬 Agenda tu servicio por WhatsApp
+  </a>
 
-  <!-- TRATAMIENTOS -->
-  <h3 class="subtitulo" style="margin-top:30px;">Tratamientos Capilares</h3>
-
-  <div class="servicio-item">
-    💖 <strong>Botox Reestructurante</strong>
-    <span>Alisa hasta un 80%</span>
-    <small>
-      Restaura la fibra capilar, elimina el frizz y aporta brillo, suavidad y nutrición profunda.
-      Ideal para cabellos procesados. Duración aproximada de 4 meses.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    💖 <strong>Botox Hidratante</strong>
-    <span>Alisa hasta un 20%</span>
-    <small>
-      Aporta hidratación, brillo y suavidad, controlando el frizz.
-      Ideal para cabellos secos y deshidratados.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    💖 <strong>Tratamiento de Encerado</strong>
-    <span>No alisa</span>
-    <small>
-      Nutre profundamente, elimina el frizz y aporta brillo y suavidad.
-      Apto para cabellos procesados.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    💖 <strong>Encerado Extra Fuerte</strong>
-    <span>Alisa hasta un 60%</span>
-    <small>
-      Tratamiento reestructurante que reduce la porosidad,
-      aporta brillo intenso y elimina el frizz.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    💖 <strong>Tratamiento Truss</strong>
-    <small>
-      Restaura profundamente el cabello, regula el pH,
-      combate la porosidad y devuelve elasticidad y suavidad.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    💖 <strong>Tratamiento Olaplex</strong>
-    <small>
-      Fortalece el cabello desde el interior, aporta brillo,
-      hidratación y protección contra futuros daños.
-    </small>
-  </div>
-
-  <!-- OTROS -->
-  <h3 class="subtitulo" style="margin-top:30px;">Corte y Detalles de Belleza</h3>
-
-  <div class="servicio-item">
-    ✂️ <strong>Corte de cabello</strong>
-    <span>Desde $350 MXN</span>
-    <small>
-      Incluye lavado y estilizado.
-      El precio puede variar según largo y volumen.
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    ✨ <strong>Depilación facial</strong>
-    <small>
-      Cejas $150 · Bozo $85 · Rostro completo $250
-    </small>
-  </div>
-
-  <div class="servicio-item">
-    ✨ <strong>Lifting de pestañas</strong>
-    <span>$250 MXN</span>
-    <small>
-      Eleva y curva las pestañas naturales desde la raíz,
-      logrando una mirada más definida y femenina sin extensiones.
-    </small>
-  </div>
-
-  <p class="garantia">💖 Todos nuestros servicios cuentan con garantía 💖</p>
+  <!-- GARANTÍA -->
+  <p class="garantia">
+    💖 Servicios realizados con técnicas profesionales y productos originales,
+    cuidando siempre la salud de tu cabello.
+  </p>
 
   <a class="btn" onclick="regresar()">⬅️ Regresar</a>
-
 </section>
 
 <div class="seccion" id="productos">
@@ -853,6 +932,13 @@ Servicios y productos profesionales en Tepic, Nayarit
       para cuidar y mantener la salud y belleza de tu cabello desde casa.
       <br>La disponibilidad puede variar según existencia.
     </p>
+
+    <p class="nota-productos femenina">
+  💳 Contamos con <strong>3 meses sin intereses</strong> en compras seleccionadas
+  con tarjetas de crédito participantes.
+  <br>
+  <small>Aplican términos y condiciones. Solo tarjetas aceptadas por terminal BBVA.</small>
+</p>
 
     <!-- 🔍 BUSCADOR -->
     <input 
@@ -1808,6 +1894,17 @@ Servicios y productos profesionales en Tepic, Nayarit
      <br>con gusto te asesoramos 💖
     </p>
 
+    <p class="nota-productos femenina">
+     Todos nuestros productos son <strong>originales y de uso profesional</strong>,
+     seleccionados para cuidar la salud de tu cabello.
+    </p>
+
+    <a class="btn"
+     href="https://wa.me/523112553233?text=Hola,%20me%20gustaría%20recibir%20asesoría%20sobre%20productos%20para%20mi%20cabello."
+     target="_blank">
+     💬 Asesoría personalizada por WhatsApp
+    </a>
+
     <a class="btn" onclick="regresar()">⬅️ Regresar</a>
 
   <div><!-- productos-inner -->
@@ -1947,27 +2044,7 @@ function cerrarZoom() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const lista = document.querySelector(".productos-lista");
-    if (!lista) return;
 
-    const productos = Array.from(lista.querySelectorAll(".producto-item"));
-
-    productos.sort((a, b) => {
-        const marcaA = a.querySelector(".producto-marca")?.innerText.trim().toUpperCase() || "";
-        const marcaB = b.querySelector(".producto-marca")?.innerText.trim().toUpperCase() || "";
-
-        if (marcaA < marcaB) return -1;
-        if (marcaA > marcaB) return 1;
-
-        const nombreA = a.querySelector(".producto-nombre")?.innerText.trim().toUpperCase() || "";
-        const nombreB = b.querySelector(".producto-nombre")?.innerText.trim().toUpperCase() || "";
-
-        return nombreA.localeCompare(nombreB, "es", { sensitivity: "base" });
-    });
-
-    productos.forEach(producto => lista.appendChild(producto));
-});
 
 document.getElementById("buscador").addEventListener("keyup", function () {
   const texto = this.value.toLowerCase();
