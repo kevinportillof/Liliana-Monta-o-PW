@@ -601,6 +601,52 @@ body{
   margin-bottom: 6px !important;
 }
 
+/* ===== FIX DEFINITIVO: PRODUCTOS PEGADOS AL TEXTO ===== */
+#productos {
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+}
+
+#productos.seccion {
+  padding-top: 0 !important;
+}
+
+.subtitulo-productos {
+  margin-bottom: 0 !important;
+}
+
+.productos-lista {
+  margin-top: 0 !important;
+}
+
+/* DESCRIPCIONES */
+.producto-desc.completa {
+  display: none;
+}
+
+.ver-mas {
+  background: none;
+  border: none;
+  color: #f2c1d1;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 6px 0 10px;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* BOTÓN WHATSAPP POR PRODUCTO */
+.btn-whatsapp-producto {
+  background: #25D366;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 18px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
 </style>
 </head>
 <body>
@@ -797,900 +843,976 @@ Servicios y productos profesionales en Tepic, Nayarit
 
 </section>
 
-
 <div class="seccion" id="productos">
   <div class="productos-inner">
-  <h2 class="titulo">Productos</h2>
 
-  <input 
-  type="text" 
-  id="buscador"
-  placeholder="Buscar producto (ej. shampoo, rizos, rubio)"
-  style="
-    width:100%;
-    padding:14px;
-    border-radius:16px;
-    border:none;
-    margin:20px 0;
-    font-size:15px;
-  "
->
+    <h2 class="titulo">Productos</h2>
 
+    <p class="subtitulo-productos">
+      Trabajamos con productos profesionales y originales, cuidadosamente seleccionados
+      para cuidar y mantener la salud y belleza de tu cabello desde casa.
+      <br>La disponibilidad puede variar según existencia.
+    </p>
 
-<p class="subtitulo-productos">
-Trabajamos con productos profesionales y originales, cuidadosamente seleccionados
-para cuidar y mantener la salud y belleza de tu cabello desde casa.
-<br>La disponibilidad puede variar según existencia.
-</p>
+    <!-- 🔍 BUSCADOR -->
+    <input 
+      type="text" 
+      id="buscador"
+      placeholder="Buscar producto (ej. shampoo, rizos, rubio)"
+      style="
+        width:100%;
+        padding:14px;
+        border-radius:16px;
+        border:none;
+        margin:10px 0 12px;
+        font-size:15px;
+      "
+    >
 
+    <!-- 📦 LISTA DE PRODUCTOS -->
+    <div class="productos-lista">
 
-<div class="productos-lista">
-
-  <!-- PRODUCTO 1 -->
-  <div class="producto-item">
-    <img src="https://i.ibb.co/W4gN90kK/1.png"
-         alt="Davines LOVE Curl Conditioner"
-         loading="lazy"
-         onclick="zoomImagen(this.src)">
-
-    <div class="producto-info">
-      <strong class="producto-marca">DAVINES</strong>
-
-      <div class="producto-nombre">
-        LOVE Curl Conditioner · Acondicionador para rizos
+      <!-- PRODUCTO 1 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/W4gN90kK/1.png"
+             alt="Davines LOVE Curl Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+            LOVE Curl Conditioner · Acondicionador para rizos
+          </div>
+          <span class="producto-precio">$750 MXN</span>
+          <small class="producto-desc corta">
+            Acondicionador profesional para cabello ondulado o rizado.
+            Define los rizos y controla el frizz.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Acondicionador profesional para cabello ondulado o rizado.
+            Define los rizos, controla el frizz y aporta suavidad y elasticidad
+            sin apelmazar.
+            <br><br>
+            📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
       </div>
 
-      <span class="producto-precio">$750 MXN</span>
-
-      <small class="producto-desc">
-        Acondicionador profesional para cabello ondulado o rizado.
-        Define los rizos, controla el frizz y aporta suavidad y elasticidad
-        sin apelmazar, dejando el cabello más manejable y con movimiento natural.
-        <br><br>
-        📦 Presentación: 250 ml · Uso profesional y en casa.
-      </small>
-    </div>
-  </div>
-
-  <!-- PRODUCTO 2 -->
-  <div class="producto-item">
-    <img src="https://i.ibb.co/DDnpxxfC/2.png"
-         alt="Davines Naturaltech Replumping Shampoo"
-         loading="lazy"
-         onclick="zoomImagen(this.src)">
-
-    <div class="producto-info">
-      <strong class="producto-marca">DAVINES</strong>
-
-      <div class="producto-nombre">
-        Naturaltech Replumping Shampoo · Shampoo hidratante
+      <!-- PRODUCTO 2 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/DDnpxxfC/2.png"
+             alt="Davines Naturaltech Replumping Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+            Naturaltech Replumping Shampoo · Shampoo hidratante
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+            Shampoo profesional hidratante.
+            Aporta elasticidad, suavidad y volumen natural.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Shampoo profesional hidratante ideal para cabello seco o deshidratado.
+            Limpia suavemente y aporta cuerpo y elasticidad.
+            <br><br>
+            🌿 Extractos fitocéuticos de ciruela.
+            <br>
+            📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
       </div>
 
-      <span class="producto-precio">$685 MXN</span>
-
-      <small class="producto-desc">
-        Shampoo profesional hidratante y elasticizante ideal para cabello seco o deshidratado.
-        Limpia suavemente mientras aporta cuerpo, elasticidad y suavidad,
-        dejando el cabello más flexible, brillante y con sensación de volumen natural.
-        <br><br>
-        🌿 Ingrediente clave: extractos fitocéuticos de ciruela, ricos en antioxidantes.
-        <br>
-        📦 Presentación: 250 ml · Uso profesional y en casa.
-      </small>
-    </div>
-  </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/NdHnWtTY/3.png"
-       alt="Davines Heart of Glass Conditioner"
-       loading="lazy"
-       onclick="zoomImagen(this.src)">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Heart of Glass Conditioner · Acondicionador para cabello rubio
-    </div>
-
-    <span class="producto-precio">$900 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional fortificante y sublimador diseñado especialmente
-      para cabello rubio natural o tratado.
-      Nutre, suaviza y fortalece la fibra capilar, ayudando a mantener el color luminoso,
-      mejorar la manejabilidad y dejar el cabello sedoso, brillante y saludable sin sensación pesada.
-      <br><br>
-      🌿 Ingrediente clave: extracto de jagua azul, que protege la fibra capilar
-      y ayuda a conservar el tono rubio.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
-  </div>
-
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/bR1gywhy/4.png"
-       alt="Davines Heart of Glass Intense Treatment"
-       loading="lazy"
-       onclick="zoomImagen(this.src)">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Heart of Glass Intense Treatment · Tratamiento intensivo para cabello rubio
-    </div>
-
-    <span class="producto-precio">$785 MXN</span>
-
-    <small class="producto-desc">
-      Tratamiento intensivo profesional diseñado para restaurar, fortalecer y proteger
-      el cabello rubio natural o tratado.
-      Refuerza la fibra capilar, mejora la elasticidad y ayuda a mantener el color luminoso,
-      dejando el cabello más fuerte, suave y brillante desde la primera aplicación.
-      <br><br>
-      🌿 Ingrediente clave: extracto de jagua azul, que protege la fibra capilar
-      y preserva el tono rubio.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/qFJ190Qt/5.png"
-       alt="Davines Beautiful Things Restoring Leave-In"
-       loading="lazy"
-       onclick="zoomImagen(this.src)">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Beautiful Things Restoring Leave-In · Mascarilla reparadora sin enjuague
-    </div>
-
-    <span class="producto-precio">$945 MXN</span>
-
-    <small class="producto-desc">
-      Tratamiento leave-in profesional diseñado para reparar, proteger y revitalizar
-      el cabello teñido o sensibilizado por procesos químicos.
-      Fortalece la fibra capilar, aporta brillo y suavidad con textura sedosa,
-      sin dejar sensación pesada y sin necesidad de enjuague.
-      <br><br>
-      🌿 Ingrediente clave: extractos fitocéuticos de arándano,
-      ricos en antioxidantes que ayudan a proteger el color y la fibra capilar.
-      <br>
-      📦 Presentación: 90 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/v4jWzQLJ/6.png"
-       alt="Davines NOUNOU Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      NOUNOU Conditioner · Acondicionador nutritivo y reparador
-    </div>
-
-    <span class="producto-precio">$895 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional formulado para restaurar profundamente
-      el cabello seco, maltratado o químicamente tratado.
-      Proporciona hidratación intensa, reduce el frizz y mejora la textura,
-      dejando el cabello más suave, manejable y visiblemente saludable.
-      <br><br>
-      🌿 Ideal para cabellos post-decoloración o tratamientos químicos.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/sdS6JBf4/7.png"
-       alt="Davines NOUNOU Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      NOUNOU Shampoo · Shampoo nutritivo reparador
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional nutritivo diseñado para restaurar el cabello seco,
-      maltratado o químicamente tratado por decoloraciones y tintes.
-      Limpia suavemente sin resecar, ayudando a fortalecer la fibra capilar
-      y dejando el cabello más suave, brillante y visiblemente saludable desde el primer uso.
-      <br><br>
-      🌿 Ideal para cabellos debilitados o post-decoloración.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/3YmJFVKR/8.png"
-       alt="Davines OI All In One Milk"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      OI All In One Milk · Tratamiento sin enjuague multifunción
-    </div>
-
-    <span class="producto-precio">$1,021 MXN</span>
-
-    <small class="producto-desc">
-      Tratamiento leave-in profesional todo en uno, ideal para todo tipo de cabello.
-      Hidrata intensamente, desenreda, controla el frizz y protege del calor,
-      dejando el cabello suave, brillante y sedoso sin apelmazar.
-      <br><br>
-      🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes que fortalecen
-      y protegen la fibra capilar.
-      <br>
-      📦 Presentación: 135 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/DfhhCXWN/9.png"
-       alt="Davines OI Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      OI Conditioner · Acondicionador hidratante de belleza absoluta
-    </div>
-
-    <span class="producto-precio">$1,000 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional de belleza absoluta ideal para todo tipo de cabello.
-      Hidrata profundamente, suaviza y aporta brillo inmediato,
-      facilitando el desenredo y controlando el frizz sin dejar sensación pesada.
-      Perfecto para uso diario y para mantener el cabello sano, sedoso y manejable.
-      <br><br>
-      🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes que nutren,
-      protegen y fortalecen la fibra capilar.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/1tWzT9TC/10.png"
-       alt="Davines OI Oil"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      OI Oil · Aceite de belleza sin enjuague
-    </div>
-
-    <span class="producto-precio">$1,280 MXN</span>
-
-    <small class="producto-desc">
-      Aceite profesional de belleza absoluta sin enjuague, ideal para todo tipo de cabello.
-      Suaviza, controla el frizz y aporta brillo inmediato, mejorando la manejabilidad
-      sin dejar sensación pesada. Perfecto para usar en cabello seco o húmedo.
-      <br><br>
-      🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes que protegen,
-      fortalecen y aportan sedosidad al cabello.
-      <br>
-      📦 Presentación: 135 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/6c7L0w2X/11.png"
-       alt="Davines Naturaltech Energizing Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Naturaltech Energizing Shampoo · Shampoo fortalecedor
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional estimulante formulado para fortalecer el cuero cabelludo
-      y el cabello fino, frágil o con tendencia a la caída.
-      Ayuda a revitalizar el cuero cabelludo, aporta sensación de frescura y energía,
-      y contribuye a fortalecer el cabello debilitado con el uso continuo.
-      <br><br>
-      🌿 Ingrediente clave: Natural Hair Energy Complex con cafeína fitocéutica
-      y extracto de salvia roja, que revitalizan el cuero cabelludo.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/mr41HPHY/12.png"
-       alt="Davines LOVE Curl Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      LOVE Curl Shampoo · Shampoo disciplinante para rizos
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional formulado para limpiar suavemente y realzar
-      la forma natural del cabello ondulado o rizado.
-      Ayuda a controlar el frizz, aporta elasticidad y definición,
-      dejando los rizos más suaves, flexibles y manejables sin resecar.
-      <br><br>
-      🌿 Ingrediente clave: extracto de almendra, que nutre y mejora
-      la elasticidad del rizo.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/0R0zsdFX/13.png"
-       alt="Davines Naturaltech Rebalancing Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Naturaltech Rebalancing Shampoo · Shampoo equilibrante
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional equilibrante formulado para limpiar profundamente
-      el cuero cabelludo con exceso de grasa.
-      Ayuda a regular la producción de sebo sin resecar la fibra capilar,
-      proporcionando una sensación de frescura, limpieza prolongada
-      y equilibrio natural.
-      <br><br>
-      🌿 Ingrediente clave: extractos fitocéuticos de limón,
-      ricos en antioxidantes que ayudan a purificar y equilibrar el cuero cabelludo.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/k2f13FZC/14.png"
-       alt="Davines Heart of Glass Sheer Glaze"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Heart of Glass Sheer Glaze · Termoprotector iluminador para cabello rubio
-    </div>
-
-    <span class="producto-precio">$885 MXN</span>
-
-    <small class="producto-desc">
-      Fluido profesional iluminador y termoprotector diseñado especialmente
-      para cabello rubio natural o tratado.
-      Protege del calor de herramientas térmicas, aporta brillo inmediato
-      y suavidad sedosa, ayudando a mantener el tono rubio luminoso y saludable.
-      <br><br>
-      🌿 Ingrediente clave: extracto de jagua azul y filtros UV,
-      que fortalecen la fibra capilar y protegen el color.
-      <br>
-      📦 Presentación: 150 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/mrjWmShK/15.png"
-       alt="Davines Heart of Glass Silkening Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      Heart of Glass Silkening Shampoo · Shampoo sublimador para rubios
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional sublimador formulado para limpiar suavemente
-      y realzar la belleza del cabello rubio natural o tratado.
-      Ayuda a mantener el color luminoso, neutraliza reflejos amarillos
-      no deseados y fortalece la fibra capilar, dejando el cabello
-      suave, sedoso y con brillo natural sin resecar.
-      <br><br>
-      🌿 Ingrediente clave: extracto de jagua azul, que protege,
-      fortalece y mantiene el tono rubio luminoso.
-      <br>
-      📦 Presentación: 250 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/7dqsZRzF/16.png"
-       alt="Redken Color Extend Blondage Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Color Extend Blondage Shampoo · Shampoo matizador violeta
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo matizador profesional formulado para cabellos rubios,
-      con decoloración o mechas.
-      Su fórmula con pigmento violeta ayuda a neutralizar tonos amarillos
-      y cobrizos no deseados, manteniendo un rubio más frío, luminoso y uniforme,
-      mientras limpia y mejora el brillo del cabello.
-      <br><br>
-      💜 Ingrediente clave: pigmento violeta, que corrige reflejos indeseados
-      y realza el tono rubio.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/bgbMtcGN/17.png"
-       alt="Redken All Soft Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      All Soft Shampoo · Shampoo hidratante
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo hidratante profesional diseñado para limpiar suavemente
-      el cabello seco, áspero o quebradizo.
-      Aporta hidratación profunda, suavidad y manejabilidad desde el primer uso,
-      ayudando a reducir la resequedad y dejando el cabello con brillo natural
-      sin sensación pesada.
-      <br><br>
-      🌿 Ingrediente clave: aceite de argán + Moisture Complex,
-      que nutren y suavizan la fibra capilar.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/kVt4LTN1/18.png"
-       alt="Redken All Soft Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      All Soft Conditioner · Acondicionador hidratante
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional diseñado para hidratar profundamente
-      el cabello seco, dañado o debilitado.
-      Desenreda con facilidad, mejora la manejabilidad y aporta suavidad inmediata,
-      dejando el cabello más sedoso, nutrido y con brillo natural sin apelmazar.
-      <br><br>
-      🌿 Ingrediente clave: aceite de argán + 5% Moisture Complex,
-      que ayudan a restaurar la hidratación y proteger la fibra capilar.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/zh5ysmfV/19.png"
-       alt="Redken Extreme Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Extreme Conditioner · Acondicionador reparador fortalecedor
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional formulado para reparar y fortalecer
-      el cabello dañado y debilitado.
-      Ayuda a reducir el quiebre, mejora la resistencia de la fibra capilar
-      y aporta suavidad y brillo sin dejar sensación pesada,
-      manteniendo el equilibrio natural del cabello.
-      <br><br>
-      💙 Ingrediente clave: Protein Strength Complex al 4%,
-      que ayuda a reparar y fortalecer el cabello desde el interior.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/YTjsMGKy/20.png"
-       alt="Redken Extreme Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Extreme Shampoo · Shampoo reparador fortalecedor
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional formulado para reparar y fortalecer el cabello
-      dañado y debilitado.
-      Limpia suavemente mientras ayuda a reducir y prevenir el quiebre,
-      reforzando la fibra capilar desde el interior y dejando el cabello
-      más resistente, suave y con brillo saludable sin resecar.
-      <br><br>
-      💙 Ingrediente clave: Protein Strength Complex al 3%,
-      que ayuda a fortalecer y reparar el cabello dañado.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
- 
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/MD6vtXYc/21.png"
-       alt="Redken Frizz Dismiss Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Frizz Dismiss Shampoo · Shampoo anti-frizz sin sulfatos
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional sin sulfatos diseñado para controlar el frizz
-      y domar el cabello rebelde, encrespado o difícil de manejar.
-      Limpia suavemente, hidrata y ayuda a alisar la fibra capilar,
-      dejando el cabello más suave, manejable y con apariencia pulida
-      sin aportar peso.
-      <br><br>
-      🌿 Ingrediente clave: aceite de Babasú + 1% Smoothing Complex,
-      que hidratan y combaten el frizz sin apelmazar.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/KjyVG9R8/22.png"
-       alt="Redken Frizz Dismiss Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Frizz Dismiss Conditioner · Acondicionador anti-frizz
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional alisador formulado para controlar el frizz
-      y domar el cabello rebelde, encrespado o difícil de manejar.
-      Su fórmula nutritiva hidrata, suaviza y facilita el desenredo,
-      dejando el cabello más manejable, sedoso y con apariencia pulida
-      sin aportar peso.
-      <br><br>
-      🌿 Ingrediente clave: aceite de Babasú + 2% Smoothing Complex,
-      que ayudan a hidratar, alisar y combatir el frizz.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/GfKpDr1K/23.png"
-       alt="Redken Acidic Color Gloss Gentle Color Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Color Gloss Gentle Color Shampoo · Shampoo protector del color
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo profesional de fórmula suave diseñado para cabello teñido
-      o procesado químicamente.
-      Limpia delicadamente sin arrastrar el color, ayuda a prolongar su duración
-      y potencia el brillo, mientras equilibra el pH para mantener el cabello
-      más fuerte, saludable y con un color vibrante entre servicios.
-      <br><br>
-      💗 Ingrediente clave: Acidic Shine Complex,
-      que refuerza los enlaces internos, equilibra el pH y aporta brillo duradero.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/PGYYNdXY/24.png"
-       alt="Redken Acidic Bonding Concentrate Serum"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Bonding Concentrate · Sérum reparador 24/7
-    </div>
-
-    <span class="producto-precio">$999 MXN</span>
-
-    <small class="producto-desc">
-      Sérum reparador profesional de alto rendimiento diseñado para uso
-      diario y nocturno en cabello dañado, decolorado o procesado químicamente.
-      Ayuda a reparar y fortalecer los enlaces internos del cabello,
-      aportando hidratación, brillo y suavidad, además de protección térmica
-      de hasta 230 °C para un cabello visiblemente más fuerte y saludable.
-      <br><br>
-      🤍 Ingrediente clave: ácido cítrico, escualano y Bonding Care Complex al 7%,
-      que refuerzan la fibra capilar y mejoran la resistencia del cabello.
-      <br>
-      📦 Presentación: 100 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/zWGmM3kT/25.png"
-       alt="Redken Acidic Bonding Concentrate Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Bonding Concentrate Conditioner · Acondicionador reparador intensivo
-    </div>
-
-    <span class="producto-precio">$750 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador reparador profesional de alto rendimiento formulado
-      para fortalecer y reparar los enlaces debilitados del cabello dañado,
-      decolorado o procesado químicamente.
-      Ayuda a reducir el quiebre, mejora la resistencia de la fibra capilar
-      y aporta suavidad y brillo inmediato, dejando el cabello más fuerte
-      y visiblemente saludable.
-      <br><br>
-      🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 11%,
-      que refuerzan los enlaces internos y equilibran el pH del cabello.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/7t9hwZ30/27.png"
-       alt="Davines The Renaissance Circle"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">DAVINES</strong>
-
-    <div class="producto-nombre">
-      The Renaissance Circle · Mascarilla reparadora extrema
-    </div>
-
-    <span class="producto-precio">$450 MXN</span>
-
-    <small class="producto-desc">
-      Mascarilla profesional de reparación extrema diseñada para nutrir
-      y restaurar profundamente el cabello extremadamente dañado por
-      decoloraciones, tintes, herramientas de calor o procesos químicos.
-      Ayuda a reestructurar la fibra capilar, devolviendo suavidad,
-      fuerza y brillo visible desde la primera aplicación.
-      <br><br>
-      🌿 Ingredientes clave: arcilla amarilla y manteca de baobab,
-      que fortalecen, suavizan y reparan profundamente el cabello.
-      <br>
-      📦 Presentación: 50 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/sd4vCf9f/28.png"
-       alt="Redken Acidic Bonding Concentrate Shampoo"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Bonding Concentrate Shampoo · Shampoo reparador intensivo
-    </div>
-
-    <span class="producto-precio">$750 MXN</span>
-
-    <small class="producto-desc">
-      Shampoo reparador profesional de alto rendimiento formulado para
-      fortalecer y reparar los enlaces debilitados del cabello dañado,
-      decolorado, teñido o procesado químicamente.
-      Limpia suavemente mientras restaura fuerza, suavidad y resistencia,
-      ayudando a reducir el quiebre y a proteger el color.
-      <br><br>
-      🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 7%,
-      que refuerzan los enlaces internos y equilibran el pH del cabello.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/ccstRsVc/29.png"
-       alt="Redken Acidic Bonding Concentrate Leave-In Treatment"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Bonding Concentrate Leave-In · Tratamiento sin enjuague reparador
-    </div>
-
-    <span class="producto-precio">$850 MXN</span>
-
-    <small class="producto-desc">
-      Tratamiento leave-in profesional de alto rendimiento diseñado para
-      reparar, fortalecer y proteger el cabello dañado, decolorado,
-      teñido o procesado químicamente.
-      Hidrata profundamente, facilita el peinado y protege del calor
-      hasta 230 °C, dejando el cabello más fuerte, suave y visiblemente saludable.
-      <br><br>
-      🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 5%,
-      que refuerzan los enlaces internos y equilibran el pH del cabello.
-      <br>
-      📦 Presentación: 150 ml · Uso profesional y en casa.
-    </small>
-  </div>
- </div>
-
- <div class="producto-item">
-  <img src="https://i.ibb.co/SwBDwxxg/30.png"
-       alt="Redken Acidic Color Gloss Conditioner"
-       onclick="zoomImagen(this.src)"
-       style="cursor: zoom-in;">
-
-  <div class="producto-info">
-    <strong class="producto-marca">REDKEN</strong>
-
-    <div class="producto-nombre">
-      Acidic Color Gloss Conditioner · Acondicionador protector del color
-    </div>
-
-    <span class="producto-precio">$685 MXN</span>
-
-    <small class="producto-desc">
-      Acondicionador profesional protector del color formulado para sellar la cutícula
-      y aportar brillo intenso al cabello teñido o tratado químicamente.
-      Su tecnología de pH ácido ayuda a restaurar el equilibrio del cabello,
-      prolonga la intensidad del color y deja el cabello visiblemente más sano,
-      fuerte y brillante sin apelmazar.
-      <br><br>
-      💗 Ingrediente clave: Acidic Shine Complex y tecnología avanzada de pH ácido
-      (3.5–4.5), que sellan la cutícula y potencian el brillo del color.
-      <br>
-      📦 Presentación: 300 ml · Uso profesional y en casa.
-    </small>
-  </div>
-</div> <!-- productos-lista -->
-
-<p class="nota-productos femenina">
-Si buscas un producto específico o una recomendación personalizada,
-<br>con gusto te asesoramos 💖
-</p>
-
-<a class="btn" href="https://wa.me/523112553233" target="_blank">
-💬 Consultar productos por WhatsApp
-</a>
-
-<a class="btn" onclick="regresar()">⬅️ Regresar</a>
-</div><!-- productos-inner -->
+      <!-- PRODUCTO 3 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/qFJ190Qt/5.png"
+             alt="Davines Beautiful Things Restoring Leave-In"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+            Beautiful Things Restoring Leave-In · Mascarilla sin enjuague
+          </div>
+          <span class="producto-precio">$945 MXN</span>
+          <small class="producto-desc corta">
+            Mascarilla sin enjuague para cabello teñido o dañado.
+            Repara y aporta brillo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Tratamiento leave-in profesional que repara y protege
+            el cabello dañado o teñido sin dejarlo pesado.
+            <br><br>
+            🌿 Extractos fitocéuticos de arándano.
+            <br>
+            📦 Presentación: 90 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/bR1gywhy/4.png"
+             alt="Davines Heart of Glass Intense Treatment"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+            Heart of Glass Intense Treatment · Tratamiento rubio
+          </div>
+          <span class="producto-precio">$785 MXN</span>
+          <small class="producto-desc corta">
+            Tratamiento intensivo para cabello rubio.
+            Fortalece y protege el color.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Tratamiento profesional que fortalece la fibra capilar
+            y mantiene el rubio luminoso.
+            <br><br>
+            🌿 Extracto de jagua azul.
+            <br>
+            📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 5 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/qFJ190Qt/5.png"
+             alt="Davines Beautiful Things Restoring Leave-In"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+            Beautiful Things Restoring Leave-In · Mascarilla sin enjuague
+          </div>
+          <span class="producto-precio">$945 MXN</span>
+          <small class="producto-desc corta">
+            Mascarilla sin enjuague para cabello dañado.
+            Repara y aporta brillo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Tratamiento leave-in profesional que repara profundamente
+            el cabello tratado químicamente.
+            <br><br>
+            🌿 Extractos fitocéuticos de arándano.
+            <br>
+            📦 Presentación: 90 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 6 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/v4jWzQLJ/6.png"
+             alt="Davines NOUNOU Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           NOUNOU Conditioner · Acondicionador nutritivo y reparador
+          </div>
+          <span class="producto-precio">$895 MXN</span>
+          <small class="producto-desc corta">
+           Acondicionador nutritivo para cabello seco o maltratado.
+           Hidrata, repara y reduce el frizz.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional formulado para restaurar profundamente
+           el cabello seco, maltratado o químicamente tratado.
+           Proporciona hidratación intensa, reduce el frizz y mejora la textura,
+           dejando el cabello más suave, manejable y visiblemente saludable.
+           <br><br>
+           🌿 Ideal para cabellos post-decoloración o tratamientos químicos.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+       </div>
+      </div>
+
+      <!-- PRODUCTO 7 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/sdS6JBf4/7.png"
+             alt="Davines NOUNOU Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           NOUNOU Shampoo · Shampoo nutritivo reparador
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo nutritivo para cabello seco o maltratado.
+           Limpia suavemente y fortalece la fibra capilar.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional nutritivo diseñado para restaurar el cabello seco,
+           maltratado o químicamente tratado por decoloraciones y tintes.
+           Limpia suavemente sin resecar, ayudando a fortalecer la fibra capilar
+           y dejando el cabello más suave, brillante y visiblemente saludable
+           desde el primer uso.
+           <br><br>
+           🌿 Ideal para cabellos debilitados o post-decoloración.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 8 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/3YmJFVKR/8.png"
+             alt="Davines OI All In One Milk"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           OI All In One Milk · Tratamiento sin enjuague multifunción
+          </div>
+          <span class="producto-precio">$1,021 MXN</span>
+          <small class="producto-desc corta">
+           Tratamiento sin enjuague todo en uno.
+           Hidrata, controla frizz y protege del calor.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Tratamiento leave-in profesional todo en uno, ideal para todo tipo de cabello.
+           Hidrata intensamente, desenreda, controla el frizz y protege del calor,
+           dejando el cabello suave, brillante y sedoso sin apelmazar.
+           <br><br>
+           🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes
+           que fortalecen y protegen la fibra capilar.
+           <br>
+           📦 Presentación: 135 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 9 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/DfhhCXWN/9.png"
+             alt="Davines OI Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+         <strong class="producto-marca">DAVINES</strong>
+         <div class="producto-nombre">
+           OI Conditioner · Acondicionador hidratante de belleza absoluta
+         </div>
+         <span class="producto-precio">$1,000 MXN</span>
+         <small class="producto-desc corta">
+           Acondicionador hidratante para todo tipo de cabello.
+           Suaviza, aporta brillo y controla el frizz.
+         </small>
+         <button class="ver-mas">Ver descripción completa</button>
+         <small class="producto-desc completa">
+           Acondicionador profesional de belleza absoluta ideal para todo tipo de cabello.
+           Hidrata profundamente, suaviza y aporta brillo inmediato,
+           facilitando el desenredo y controlando el frizz sin dejar sensación pesada.
+           Perfecto para uso diario y para mantener el cabello sano, sedoso y manejable.
+           <br><br>
+           🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes
+           que nutren, protegen y fortalecen la fibra capilar.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 10 -->
+     <div class="producto-item">
+        <img src="https://i.ibb.co/1tWzT9TC/10.png"
+              alt="Davines OI Oil"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           OI Oil · Aceite de belleza sin enjuague
+          </div>
+          <span class="producto-precio">$1,280 MXN</span>
+          <small class="producto-desc corta">
+           Aceite sin enjuague para todo tipo de cabello.
+           Controla frizz y aporta brillo inmediato.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Aceite profesional de belleza absoluta sin enjuague,
+           ideal para todo tipo de cabello.
+           Suaviza, controla el frizz y aporta brillo inmediato,
+           mejorando la manejabilidad sin dejar sensación pesada.
+           <br><br>
+           🌿 Ingrediente clave: aceite de Roucou, rico en antioxidantes
+           que protegen, fortalecen y aportan sedosidad al cabello.
+           <br>
+           📦 Presentación: 135 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+       </div>
+     </div>
+
+     <!-- PRODUCTO 11 -->
+     <div class="producto-item">
+       <img src="https://i.ibb.co/6c7L0w2X/11.png"
+             alt="Davines Naturaltech Energizing Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+         <strong class="producto-marca">DAVINES</strong>
+         <div class="producto-nombre">
+         Naturaltech Energizing Shampoo · Shampoo fortalecedor
+         </div>
+         <span class="producto-precio">$685 MXN</span>
+         <small class="producto-desc corta">
+           Shampoo fortalecedor para cabello fino o debilitado.
+           Revitaliza el cuero cabelludo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional estimulante formulado para fortalecer el cuero cabelludo
+           y el cabello fino, frágil o con tendencia a la caída.
+           Ayuda a revitalizar el cuero cabelludo y aporta sensación de frescura y energía.
+           <br><br>
+           🌿 Ingrediente clave: Natural Hair Energy Complex con cafeína fitocéutica
+           y extracto de salvia roja.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 12 -->
+      <div class="producto-item">
+       <img src="https://i.ibb.co/mr41HPHY/12.png"
+             alt="Davines LOVE Curl Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+       <div class="producto-info">
+         <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           LOVE Curl Shampoo · Shampoo disciplinante para rizos
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo disciplinante para rizos u ondas.
+           Define y controla el frizz.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Shampoo profesional formulado para limpiar suavemente y realzar
+           la forma natural del cabello ondulado o rizado.
+           Aporta elasticidad y definición sin resecar.
+           <br><br>
+           🌿 Ingrediente clave: extracto de almendra.
+           <br>
+            📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 13 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/0R0zsdFX/13.png"
+             alt="Davines Naturaltech Rebalancing Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+         <strong class="producto-marca">DAVINES</strong>
+         <div class="producto-nombre">
+           Naturaltech Rebalancing Shampoo · Shampoo equilibrante
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo equilibrante para cuero cabelludo graso.
+           Regula el sebo y refresca.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional formulado para limpiar profundamente
+           el cuero cabelludo con exceso de grasa sin resecar la fibra capilar.
+           <br><br>
+           🌿 Ingrediente clave: extractos fitocéuticos de limón.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 14 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/k2f13FZC/14.png"
+             alt="Davines Heart of Glass Sheer Glaze"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           Heart of Glass Sheer Glaze · Termoprotector iluminador
+          </div>
+          <span class="producto-precio">$885 MXN</span>
+          <small class="producto-desc corta">
+           Termoprotector para cabello rubio.
+           Aporta brillo y protege del calor.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Fluido profesional iluminador y termoprotector para cabello rubio.
+           Protege del calor y mantiene el tono luminoso.
+           <br><br>
+           🌿 Ingrediente clave: extracto de jagua azul + filtros UV.
+           <br>
+           📦 Presentación: 150 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 15 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/mrjWmShK/15.png"
+             alt="Davines Heart of Glass Silkening Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           Heart of Glass Silkening Shampoo · Shampoo sublimador para rubios
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo sublimador para cabello rubio.
+           Neutraliza reflejos amarillos y aporta brillo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional sublimador formulado para limpiar suavemente
+           y realzar la belleza del cabello rubio natural o tratado.
+           Neutraliza reflejos amarillos y fortalece la fibra capilar.
+           <br><br>
+           🌿 Ingrediente clave: extracto de jagua azul.
+           <br>
+           📦 Presentación: 250 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 16 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/7dqsZRzF/16.png"
+             alt="Redken Color Extend Blondage Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Color Extend Blondage Shampoo · Shampoo matizador violeta
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo matizador violeta para cabellos rubios.
+           Neutraliza tonos amarillos y cobrizos.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo matizador profesional para cabellos rubios,
+           con decoloración o mechas.
+            Mantiene un rubio más frío, luminoso y uniforme.
+           <br><br>
+           🌿 Ingrediente clave: extracto de jagua azul + filtros UV.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 17 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/bgbMtcGN/17.png"
+             alt="Redken All Soft Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           All Soft Shampoo · Shampoo hidratante
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo hidratante para cabello seco o áspero.
+           Limpia suavemente y aporta suavidad.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo hidratante profesional que aporta
+           suavidad, manejabilidad y brillo natural.
+           <br><br>
+           🌿 Ingrediente clave: aceite de argán + Moisture Complex.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 18 -->
+     <div class="producto-item">
+        <img src="https://i.ibb.co/kVt4LTN1/18.png"
+             alt="Redken All Soft Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           All Soft Conditioner · Acondicionador hidratante
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Acondicionador hidratante para cabello seco o dañado.
+           Desenreda y deja el cabello sedoso.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional que hidrata profundamente,
+           mejora la manejabilidad y aporta suavidad inmediata.
+           <br><br>
+            🌿 Ingrediente clave: aceite de argán + 5% Moisture Complex.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 19 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/zh5ysmfV/19.png"
+             alt="Redken Extreme Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+            Extreme Conditioner · Acondicionador reparador fortalecedor
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Acondicionador reparador para cabello dañado.
+           Fortalece y reduce el quiebre.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional que repara y fortalece
+           la fibra capilar desde el interior.
+           <br><br>
+           💙 Ingrediente clave: Protein Strength Complex al 4%.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 20 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/YTjsMGKy/20.png"
+             alt="Redken Extreme Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Extreme Shampoo · Shampoo reparador fortalecedor
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo reparador para cabello dañado.
+           Limpia y fortalece desde el interior.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional que ayuda a reducir el quiebre
+           y fortalece la fibra capilar desde el lavado.
+           <br><br>
+           💙 Ingrediente clave: Protein Strength Complex al 3%.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 21 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/MD6vtXYc/21.png"
+             alt="Redken Frizz Dismiss Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+         <strong class="producto-marca">REDKEN</strong>
+         <div class="producto-nombre">
+           Frizz Dismiss Shampoo · Shampoo anti-frizz sin sulfatos
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+            Shampoo anti-frizz sin sulfatos.
+           Controla el frizz y deja el cabello suave.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional sin sulfatos diseñado para controlar el frizz
+           y domar el cabello rebelde, encrespado o difícil de manejar.
+           Limpia suavemente, hidrata y ayuda a alisar la fibra capilar,
+           dejando el cabello más suave y manejable sin aportar peso.
+           <br><br>
+           🌿 Ingrediente clave: aceite de Babasú + 1% Smoothing Complex.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 22 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/KjyVG9R8/22.png"
+             alt="Redken Frizz Dismiss Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+       <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Frizz Dismiss Conditioner · Acondicionador anti-frizz
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Acondicionador anti-frizz.
+           Suaviza, hidrata y facilita el desenredo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional formulado para controlar el frizz
+           y domar el cabello rebelde o encrespado.
+           Hidrata, suaviza y deja una apariencia pulida sin aportar peso.
+           <br><br>
+           🌿 Ingrediente clave: aceite de Babasú + 2% Smoothing Complex.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 23 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/GfKpDr1K/23.png"
+             alt="Redken Acidic Color Gloss Gentle Color Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Color Gloss Gentle Color Shampoo · Shampoo protector del color
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo suave para cabello teñido.
+           Protege el color y potencia el brillo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo profesional de fórmula suave para cabello teñido
+           o procesado químicamente.
+           Limpia sin arrastrar el color y equilibra el pH para un brillo duradero.
+           <br><br>
+           💗 Ingrediente clave: Acidic Shine Complex.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 24 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/PGYYNdXY/24.png"
+             alt="Redken Acidic Bonding Concentrate Serum"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Bonding Concentrate · Sérum reparador 24/7
+          </div>
+          <span class="producto-precio">$999 MXN</span>
+          <small class="producto-desc corta">
+           Sérum reparador de uso diario.
+           Fortalece, hidrata y protege del calor.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Sérum reparador profesional diseñado para reparar y fortalecer
+           los enlaces internos del cabello.
+           Protege del calor hasta 230 °C y mejora la resistencia capilar.
+           <br><br>
+           🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 7%.
+           <br>
+           📦 Presentación: 100 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 25 -->
+     <div class="producto-item">
+        <img src="https://i.ibb.co/zWGmM3kT/25.png"
+             alt="Redken Acidic Bonding Concentrate Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Bonding Concentrate Conditioner · Acondicionador reparador intensivo
+          </div>
+          <span class="producto-precio">$750 MXN</span>
+          <small class="producto-desc corta">
+            Acondicionador reparador intensivo.
+           Fortalece enlaces y reduce el quiebre.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional de alto rendimiento que fortalece
+           y repara la fibra capilar desde el interior.
+           <br><br>
+           🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 11%.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 26 -->
+     <div class="producto-item">
+        <img src="https://i.ibb.co/7t9hwZ30/27.png"
+             alt="Davines The Renaissance Circle"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">DAVINES</strong>
+          <div class="producto-nombre">
+           The Renaissance Circle · Mascarilla reparadora extrema
+          </div>
+          <span class="producto-precio">$450 MXN</span>
+          <small class="producto-desc corta">
+            Mascarilla de reparación extrema.
+            Restaura fuerza, suavidad y brillo.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+            Mascarilla profesional de reparación extrema diseñada para nutrir
+           y restaurar profundamente el cabello extremadamente dañado por
+           decoloraciones, tintes, herramientas de calor o procesos químicos.
+           Ayuda a reestructurar la fibra capilar, devolviendo suavidad,
+           fuerza y brillo visible desde la primera aplicación.
+           <br><br>
+           🌿 Ingredientes clave: arcilla amarilla y manteca de baobab.
+           <br>
+           📦 Presentación: 50 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 28 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/sd4vCf9f/28.png"
+             alt="Redken Acidic Bonding Concentrate Shampoo"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Bonding Concentrate Shampoo · Shampoo reparador intensivo
+          </div>
+          <span class="producto-precio">$750 MXN</span>
+          <small class="producto-desc corta">
+           Shampoo reparador intensivo.
+           Fortalece enlaces y protege el color.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Shampoo reparador profesional de alto rendimiento formulado para
+           fortalecer y reparar los enlaces debilitados del cabello dañado,
+           decolorado, teñido o procesado químicamente.
+           Limpia suavemente mientras restaura fuerza y resistencia.
+           <br><br>
+           🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 7%.
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+        </div>
+      </div>
+
+     <!-- PRODUCTO 29 -->
+      <div class="producto-item">
+        <img src="https://i.ibb.co/ccstRsVc/29.png"
+             alt="Redken Acidic Bonding Concentrate Leave-In Treatment"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+        <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Bonding Concentrate Leave-In · Tratamiento sin enjuague reparador
+          </div>
+          <span class="producto-precio">$850 MXN</span>
+          <small class="producto-desc corta">
+           Tratamiento sin enjuague reparador.
+           Hidrata, fortalece y protege del calor.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Tratamiento leave-in profesional diseñado para reparar, fortalecer
+           y proteger el cabello dañado o decolorado.
+           Protege del calor hasta 230 °C y mejora la resistencia capilar.
+           <br><br>
+           🤍 Ingrediente clave: ácido cítrico y Bonding Care Complex al 5%.
+           <br>
+           📦 Presentación: 150 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+            💬 Preguntar por este producto
+          </a>
+       </div>
+      </div>
+
+     <!-- PRODUCTO 30 -->
+      <div class="producto-item">
+       <img src="https://i.ibb.co/SwBDwxxg/30.png"
+             alt="Redken Acidic Color Gloss Conditioner"
+             loading="lazy"
+             onclick="zoomImagen(this.src)">
+       <div class="producto-info">
+          <strong class="producto-marca">REDKEN</strong>
+          <div class="producto-nombre">
+           Acidic Color Gloss Conditioner · Acondicionador protector del color
+          </div>
+          <span class="producto-precio">$685 MXN</span>
+          <small class="producto-desc corta">
+           Acondicionador protector del color.
+           Sella la cutícula y aporta brillo intenso.
+          </small>
+          <button class="ver-mas">Ver descripción completa</button>
+          <small class="producto-desc completa">
+           Acondicionador profesional formulado para sellar la cutícula
+           y aportar brillo intenso al cabello teñido o tratado químicamente.
+           Prolonga la intensidad del color y mejora la apariencia del cabello.
+           <br><br>
+           💗 Ingrediente clave: Acidic Shine Complex y pH ácido (3.5–4.5).
+           <br>
+           📦 Presentación: 300 ml · Uso profesional y en casa.
+          </small>
+          <a class="btn btn-whatsapp-producto" target="_blank">
+           💬 Preguntar por este producto
+          </a>
+       </div>
+      </div>
+
+
+    </div><!-- /.productos-lista -->
+
+   <p class="nota-productos femenina">
+     Si buscas un producto específico o una recomendación personalizada,
+     <br>con gusto te asesoramos 💖
+    </p>
+
+    <a class="btn" onclick="regresar()">⬅️ Regresar</a>
+
+  <div><!-- productos-inner -->
 </div><!-- seccion productos -->
+
 
 <div class="seccion" id="galeria">
   <h2 class="titulo">Antes y Después</h2>
@@ -1855,6 +1977,34 @@ document.getElementById("buscador").addEventListener("keyup", function () {
       ? "block"
       : "none";
   });
+});
+document.querySelectorAll(".producto-item").forEach(producto => {
+
+  const btnVerMas = producto.querySelector(".ver-mas");
+  const descCorta = producto.querySelector(".producto-desc.corta");
+  const descCompleta = producto.querySelector(".producto-desc.completa");
+  const btnWhatsapp = producto.querySelector(".btn-whatsapp-producto");
+  const nombreProducto = producto.querySelector(".producto-nombre").innerText;
+
+  // VER MÁS / VER MENOS
+  btnVerMas.addEventListener("click", () => {
+    const abierto = descCompleta.style.display === "block";
+
+    if (abierto) {
+      descCompleta.style.display = "none";
+      descCorta.style.display = "block";
+      btnVerMas.innerText = "Ver descripción completa";
+    } else {
+      descCompleta.style.display = "block";
+      descCorta.style.display = "none";
+      btnVerMas.innerText = "Ver menos";
+    }
+  });
+
+  // WHATSAPP POR PRODUCTO
+  const mensaje = `Hola, me interesa el producto: ${nombreProducto}`;
+  btnWhatsapp.href = `https://wa.me/523112553233?text=${encodeURIComponent(mensaje)}`;
+
 });
 
 </script>
