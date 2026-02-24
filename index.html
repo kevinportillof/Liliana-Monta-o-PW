@@ -322,30 +322,35 @@ body{
 }
 
 .productos-lista {
-  max-width: 1200px;
-  margin: 10px auto 24px;
+  max-width: 1300px;
+  margin: 0 auto 40px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
   padding: 0 20px;
 }
 
-@media (min-width: 768px) {
-  .productos-lista {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .productos-lista {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .producto-item img{
-    height: 360px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: center;
+    border-radius: 16px;
+}
+
+.producto-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .producto-info{
@@ -562,6 +567,23 @@ body{
   }
 }
 
+.grupo-servicios {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+@media (min-width: 768px) {
+  .grupo-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .grupo-servicios .subtitulo {
+    grid-column: 1 / -1;
+  }
+}
+
 /* ===== GALERÍA SIN FONDO PROPIO ===== */
 #galeria{
   background: transparent;
@@ -574,6 +596,15 @@ body{
 
 .producto-item img {
   max-height: 280px;
+}
+
+#buscador{
+  width:100%;
+  padding:14px;
+  border-radius:16px;
+  border:1px solid #ddd;
+  margin:10px 0 12px;
+  font-size:15px;
 }
 
 </style>
@@ -591,8 +622,6 @@ body{
    aria-label="Agendar cita por WhatsApp">
    <i class="fa-brands fa-whatsapp"></i>
 </a>
-
-<div class="overlay"></div>
 
 <div class="contenido" id="inicio">
     <img src="https://i.ibb.co/3yvrQBKx/Logotipo-arquitectura-geome-trico-moderno-minimalista-blanco-negro.png"
@@ -619,7 +648,7 @@ Servicios y productos profesionales en Tepic, Nayarit
 </button>
 
 <button class="btn" onclick="mostrar('galeria')">
-🖼️ galeria
+🖼️ Galería
 </button>
 
 
@@ -813,18 +842,9 @@ Servicios y productos profesionales en Tepic, Nayarit
 
     <!-- 🔍 BUSCADOR -->
     <input 
-      type="text" 
-      id="buscador"
-      placeholder="Buscar producto (ej. shampoo, rizos, rubio)"
-      style="
-        width:100%;
-        padding:14px;
-        border-radius:16px;
-        border:none;
-        margin:10px 0 12px;
-        font-size:15px;
-      "
-    >
+  type="text" 
+  id="buscador"
+  placeholder="Buscar producto (ej. shampoo, rizos, rubio)">
 
     <!-- 📦 LISTA DE PRODUCTOS -->
     <div class="productos-lista">
@@ -1827,9 +1847,6 @@ function mostrar(id) {
   const inicio = document.getElementById("inicio");
   const secciones = document.querySelectorAll(".seccion");
   const destino = document.getElementById(id);
-  const overlay = document.querySelector(".overlay");
-
-  if (overlay) overlay.style.display = "none";
 
   if (inicio) inicio.style.display = "none";
   secciones.forEach(sec => sec.style.display = "none");
@@ -1848,7 +1865,6 @@ function regresar() {
   secciones.forEach(sec => sec.style.display = "none");
 
   if (inicio) inicio.style.display = "block";
-  if (overlay) overlay.style.display = "block";
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -1891,16 +1907,6 @@ function cerrarZoom() {
 
 document.addEventListener("DOMContentLoaded", () => {
   /* 🔤 ORDEN ALFABÉTICO DE PRODUCTOS */
-if (window.innerWidth <= 768) {
-  const lista = document.querySelector(".productos-lista");
-  if (lista) {
-    const productos = Array.from(lista.children);
-    productos.sort((a, b) =>
-      a.innerText.localeCompare(b.innerText)
-    );
-    productos.forEach(p => lista.appendChild(p));
-  }
-}
 
  /* 🔍 BUSCADOR INTELIGENTE */
 const buscador = document.getElementById("buscador");
