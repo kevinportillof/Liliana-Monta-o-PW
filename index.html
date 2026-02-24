@@ -34,44 +34,15 @@ img{
 body{
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    background:
-      linear-gradient(
-        180deg,
-        #3a3a3a 0%,
-        #1f1f1f 35%,
-        #0e0e0e 100%
-      );
-    background-attachment: fixed;
     text-align: center;
-    color: #f5f5f5;
+    color: #333;
     overflow-x: hidden;
-}
 
-.overlay {
-    background: radial-gradient(
-        circle at top,
-        rgba(255,255,255,0.08),
-        rgba(0,0,0,0.55)
-    );
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(242,193,209,0.10), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(242,193,209,0.06), transparent 40%),
+        linear-gradient(180deg, #ffffff 0%, #faf8fb 100%);
 }
-
-.seccion{
-    background: transparent;
-    color: #f5f5f5;
-}
-
-    .contenido {
-        position: relative;
-        z-index: 2;
-        padding-top: 50px;
-        animation: fadeIn 0.8s ease;
-    }
 
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -88,7 +59,7 @@ body{
 
     img.logo:hover {
         transform: rotate(-3deg) scale(1.05);
-        box-shadow: 0 0 20px gold;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
         cursor: pointer;
     }
     .logo {
@@ -96,42 +67,43 @@ body{
     }
 
     h1 {
-        font-family: 'Great Vibes', cursive;
-        font-size: 50px;
-        margin-top: 15px;
-        color: rgb(250, 249, 250);
-        text-shadow: 0 0 12px #fafafa;
-    }
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-top: 15px;
+    color: #111111;
+    text-shadow: none;
+}
 
     /* BOTONES */
-    .btn{
+.btn{
     display: block;
     width: 85%;
     max-width: 320px;
     margin: 14px auto;
     padding: 16px;
-    background: linear-gradient(
-        135deg,
-        #2f2f2f,
-        #1c1c1c
-    );
-    color: #f5f5f5;
+
+    background: #111;            /* negro elegante */
+    color: #d4d4d4;              /* gris claro elegante */
+
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 1px;
     border-radius: 22px;
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid #222;
+
     text-decoration: none;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
 }
 
 .btn:hover{
-    transform: scale(1.04);
+    background: #000;
+    color: #ffffff;              /* al pasar el mouse se vuelve blanco */
+    transform: translateY(-3px);
 }
 
 .btn:active{
-    transform: scale(0.96);
+    transform: scale(0.97);
 }
 
 @media (max-width: 768px){
@@ -173,15 +145,14 @@ body{
     }
     .maps { background: #34a853; }
 
-    .titulo{
-    font-size: 36px;
-    font-weight: 700;
+  .titulo{
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
     margin-bottom: 25px;
-    color: #f5f5f5;
+    color: #111;
     letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(242,193,209,0.45); /* rosa suave */
+    font-style: italic;
 }
-
     
 /* ===== AJUSTES SOLO PARA CELULAR ===== */
 @media (max-width: 768px) {
@@ -203,10 +174,9 @@ body{
      h1{
         font-size: 34px;
         margin-top: 10px;
-        color: #ffffff;
-        text-shadow: 0 0 8px rgba(255,255,255,0.9);
+       color: #111;
+        text-shadow: none;
     }
-
 
     .btn{
         width: 90%;
@@ -289,8 +259,9 @@ body{
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: #f2c1d1;
+  color: #444;
 }
+
 
 @media (max-width: 768px){
     .subtitulo{
@@ -321,9 +292,8 @@ body{
     opacity: 0.9;
 }
 
-.subtitulo-productos{
-    color: rgba(242,193,209,0.85); /* rosita más suave */
-}
+.subtitulo-productos small{
+     color: #555; }
 
 /* ORDEN PROFESIONAL DE PRODUCTOS */
 .producto-marca{
@@ -331,7 +301,7 @@ body{
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #e5e5e5;
+   color: #111;
     margin-bottom: 4px;
 }
 
@@ -342,13 +312,7 @@ body{
 }
 
 .producto-precio {
-  background: rgba(242,193,209,0.15);
-  padding: 6px 12px;
-  border-radius: 12px;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 800;
-  margin-bottom: 8px;
+  background: #f2f2f2;
 }
 
 .producto-desc{
@@ -358,19 +322,24 @@ body{
 }
 
 .productos-lista {
-  max-width: 380px;
-  margin: 10px auto 24px; /* 👈 antes estaba empujando */
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  max-width: 1200px;
+  margin: 10px auto 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 20px;
 }
 
-.producto-item{
-    max-width: 420px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (min-width: 768px) {
+  .productos-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .productos-lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .producto-item img{
@@ -383,14 +352,6 @@ body{
     padding: 14px;
     font-size: 15px;
     font-weight: 600;
-}
-
-.producto-info span{
-    display: block;
-    margin-top: 4px;
-    font-size: 14px;
-    font-weight: 700;
-   color: var(--femenino);
 }
 
 .producto-info small{
@@ -408,7 +369,7 @@ body{
     line-height: 1.8;
     text-align: center;
     letter-spacing: 0.6px;
-    color: #f2c1d1; /* rosa femenino suave */
+    color: #444;
     opacity: 0.95;
 }
 
@@ -470,25 +431,13 @@ body{
   margin-bottom: 40px;
 }
 
-
-
 /* CONTROL CORRECTO DE SECCIONES */
 .seccion {
-  display: none;        /* ocultas por defecto */
+  display: none;
   position: relative;
-  z-index: 2;           /* ⬅️ CLAVE: encima del overlay */
-  min-height: auto;
-  height: auto;
+  z-index: 2;
   padding: 60px 20px;
-}
-
-
-
-/* CONTENEDOR REAL DE PRODUCTOS */
-.productos-inner {
-  max-width: 420px;
-  margin: 0 auto;
-  text-align: left;      /* ⬅️ CLAVE */
+  background: transparent;
 }
 
 /* TÍTULO CENTRADO, CONTENIDO NORMAL */
@@ -499,13 +448,13 @@ body{
 
 /* ===== PRODUCTOS (DEFINITIVO) ===== */
 #productos {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .productos-inner {
-  max-width: 420px;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: left; /* rompe el centrado del body */
+  text-align: left;
 }
 
 #productos .titulo,
@@ -518,21 +467,12 @@ body{
   display: none;
 }
 
-.ver-mas {
-  background: none;
-  border: none;
-  color: #f2c1d1;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 6px;
-}
-
 .marca-titulo {
   margin: 30px 0 10px;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #f2c1d1;
+  color: #111;
 }
 
 .producto-item .btn {
@@ -555,39 +495,6 @@ body{
   margin-bottom: 12px;
 }
 
-/* 🔥 FIX DEFINITIVO DE ESPACIO */
-#productos {
-  padding-top: 20px;   /* antes 60px */
-  padding-bottom: 20px;
-}
-
-#productos .productos-inner {
-  padding-top: 0;
-}
-
-/* 🔧 PASO 4: PEGAR PRODUCTOS AL TEXTO DE EXISTENCIA */
-.subtitulo-productos {
-  margin-bottom: 6px !important;
-}
-
-/* ===== FIX DEFINITIVO: PRODUCTOS PEGADOS AL TEXTO ===== */
-#productos {
-  padding-top: 0 !important;
-  padding-bottom: 20px !important;
-}
-
-#productos.seccion {
-  padding-top: 0 !important;
-}
-
-.subtitulo-productos {
-  margin-bottom: 0 !important;
-}
-
-.productos-lista {
-  margin-top: 0 !important;
-}
-
 /* DESCRIPCIONES */
 .producto-desc.completa {
   display: none;
@@ -596,7 +503,7 @@ body{
 .ver-mas {
   background: none;
   border: none;
-  color: #f2c1d1;
+  color: #777;
   font-weight: 700;
   cursor: pointer;
   margin: 6px 0 10px;
@@ -617,75 +524,42 @@ body{
 }
 
 /* ===== SERVICIOS – BRILLO BASE ===== */
-
 .servicio-item{
-  background: rgba(255,255,255,0.12);
+  background: #F8F8F8;
   padding: 18px;
   border-radius: 18px;
   margin-bottom: 16px;
   text-align: left;
   font-size: 15px;
   font-weight: 600;
-  color: #fff;
+  color: #333;
 
-  /* brillo suave */
-  border: 1px solid rgba(242,193,209,0.35);
-  box-shadow:
-    0 0 10px rgba(242,193,209,0.22),
-    0 0 20px rgba(242,193,209,0.12);
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.servicio-item strong{
+  color: #111;
+}
+
+.servicio-item span{
+  color: #777;
+}
+
+.servicio-item small{
+  color: #555;
 }
 
 .servicio-item.destacado{
-  border: 1px solid rgba(242,193,209,0.7);
-  box-shadow:
-    0 0 18px rgba(242,193,209,0.55),
-    0 0 35px rgba(242,193,209,0.35);
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 @media (min-width: 768px){
   .servicio-item:hover{
     transform: translateY(-3px);
-    box-shadow:
-      0 0 16px rgba(242,193,209,0.45),
-      0 0 30px rgba(242,193,209,0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   }
-
-  .servicio-item.destacado:hover{
-    box-shadow:
-      0 0 24px rgba(242,193,209,0.75),
-      0 0 45px rgba(242,193,209,0.45);
-  }
-}
-
-.servicio-item strong{
-  font-size: 16px;
-  color: #fff;
-  text-shadow: 0 0 6px rgba(242,193,209,0.6);
-}
-
-.servicio-item span{
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffd6e5;
-  text-shadow: 0 0 6px rgba(242,193,209,0.8);
-}
-
-.servicio-item small{
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #f2f2f2;
-  opacity: 0.95;
-}
-
-/* OCULTAR OVERLAY FUERA DE INICIO */
-.seccion {
-  background: transparent;
 }
 
 /* ===== GALERÍA SIN FONDO PROPIO ===== */
@@ -696,13 +570,6 @@ body{
 #galeria .titulo,
 #galeria .subtitulo-servicios{
   color: #222;
-}
-
-@media (min-width: 1024px) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
 }
 
 .producto-item img {
@@ -1078,37 +945,6 @@ Servicios y productos profesionales en Tepic, Nayarit
             🌿 Extracto de jagua azul.
             <br>
             📦 Presentación: 250 ml · Uso profesional y en casa.
-          </small>
-          <a class="btn btn-whatsapp-producto" target="_blank">
-            💬 Preguntar por este producto
-          </a>
-        </div>
-      </div>
-
-      <!-- PRODUCTO 5 -->
-      <div class="producto-item">
-        <img src="https://i.ibb.co/qFJ190Qt/5.png"
-             alt="Davines Beautiful Things Restoring Leave-In"
-             loading="lazy"
-             onclick="zoomImagen(this.src)">
-        <div class="producto-info">
-          <strong class="producto-marca">DAVINES</strong>
-          <div class="producto-nombre">
-            Beautiful Things Restoring Leave-In · Mascarilla sin enjuague
-          </div>
-          <span class="producto-precio">$945 MXN</span>
-          <small class="producto-desc corta">
-            Mascarilla sin enjuague para cabello dañado.
-            Repara y aporta brillo.
-          </small>
-          <button class="ver-mas">Ver descripción completa</button>
-          <small class="producto-desc completa">
-            Tratamiento leave-in profesional que repara profundamente
-            el cabello tratado químicamente.
-            <br><br>
-            🌿 Extractos fitocéuticos de arándano.
-            <br>
-            📦 Presentación: 90 ml · Uso profesional y en casa.
           </small>
           <a class="btn btn-whatsapp-producto" target="_blank">
             💬 Preguntar por este producto
@@ -1928,11 +1764,11 @@ Servicios y productos profesionales en Tepic, Nayarit
     <!-- ITEM -->
  <div style="max-width:420px;">
   <img src="https://i.ibb.co/KjZsQ2nn/1.png"
-       alt="Balayage natural antes y después"
+       alt="Botox reestructurante antes y después"
        style="width:100%; border-radius:20px; cursor: zoom-in;"
        onclick="zoomImagen(this.src)">
-  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
-    Balayage natural · Antes y Después
+  <p style="margin-top:10px; font-weight:600; color:#444;">
+    Botox reestructurante · Antes y Después
   </p>
 </div>
 
@@ -1941,7 +1777,7 @@ Servicios y productos profesionales en Tepic, Nayarit
        alt="Alisado reestructurante antes y después"
        style="width:100%; border-radius:20px; cursor: zoom-in;"
        onclick="zoomImagen(this.src)">
-  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+  <p style="margin-top:10px; font-weight:600; color:#444;">
     Alisado reestructurante · Antes y Después
   </p>
 </div>
@@ -1951,7 +1787,7 @@ Servicios y productos profesionales en Tepic, Nayarit
        alt="Tratamientos antes y después"
        style="width:100%; border-radius:20px; cursor: zoom-in;"
        onclick="zoomImagen(this.src)">
-  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+  <p style="margin-top:10px; font-weight:600; color:#444;">
     Tratamientos · Antes y Después
   </p>
 </div>
@@ -1961,7 +1797,7 @@ Servicios y productos profesionales en Tepic, Nayarit
        alt="Tratamientos antes y después"
        style="width:100%; border-radius:20px; cursor: zoom-in;"
        onclick="zoomImagen(this.src)">
-  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+  <p style="margin-top:10px; font-weight:600; color:#444;">
     Tratamientos· Antes y Después
   </p>
 </div>
@@ -1971,7 +1807,7 @@ Servicios y productos profesionales en Tepic, Nayarit
        alt="Blonder con contour en el marco del rostro antes y después"
        style="width:100%; border-radius:20px; cursor: zoom-in;"
        onclick="zoomImagen(this.src)">
-  <p style="margin-top:10px; font-weight:600; color:#ffd700;">
+  <p style="margin-top:10px; font-weight:600; color:#444;">
     Blonder con contour en el marco del rostro. · Antes y Después
   </p>
 </div>
